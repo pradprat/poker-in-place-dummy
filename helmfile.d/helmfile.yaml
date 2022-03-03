@@ -1,0 +1,54 @@
+repositories:
+- name: stable
+  url: https://charts.helm.sh/stable
+- name: jetstack
+  url: https://charts.jetstack.io
+
+helmDefaults:
+  historyMax: 10
+  wait: true
+  kubeContext: {{ .Environment.Values.cluster }}
+
+environments:
+  dev:
+    values:
+      - cluster: gke_poker-in-place_us-east1_k8s-pip
+        namespace: dev
+
+releases:
+  - name: cert-namager
+    chart: jetstack/cert-manager
+    namespace: cert-manager
+    version: v1.2.0
+    labels:
+      app: cert-manager
+    missingFileHandler: Debug
+
+  - name: ingress
+    chart: stable/nginx-ingress
+    namespace: ingress
+    labels:
+      app: ingress
+    missingFileHandler: Debug
+
+  - name: functions
+    chart: ./web-service-chart
+    namespace: {{ .Environment.Values.namespace }}
+    values:
+      - values/functions.yaml.gotmpl
+      - values/{{ .Environment.Name }}/functions.yaml
+    secrets:
+      - secrets/{{ .Environment.Name }}/functions.secrets.yaml
+    labels:
+      app: functions
+    missingFileHandler: Debug
+
+  - name: media-server
+    chart: ./web-service-chart
+    namespace: {{ .Environment.Values.namespace }}
+    values:
+      - values/media-server.yaml.gotmpl
+      - values/{{ .Environment.Name }}/media-server.yaml
+    labels:
+      app: media-server
+    missingFileHandler: Debug

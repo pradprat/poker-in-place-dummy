@@ -1,0 +1,48 @@
+name: STAGE Frontend
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Deploy Stage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - name: Install Dependencies
+        run: yarn
+      - name: Install Client Dependencies
+        run: |
+          cd client
+          yarn
+      - name: Build
+        run: |
+          cd client
+          yarn build
+          yarn build-engine
+        env:
+          CI: false
+          REACT_APP_ASAYER: 7201017855600676
+          REACT_APP_API_ENDPOINT: https://stage0.api.pokerinplace.app
+          REACT_APP_SENTRY_DSN: https://7c470a527ab849bfa4017c9177b30039@o384438.ingest.sentry.io/5462699
+          REACT_APP_FIREBASE_STORAGE_BUCKET: poker-in-place-stage.appspot.com
+          REACT_APP_FIREBASE_API_KEY: AIzaSyCgClTLMJx-nQAVVnAhneXQhY9nFBI9Aa0
+          REACT_APP_MEDIA_HOST: n1.media.pokerinplace.app
+          REACT_APP_MEDIA_PORT: 443
+          REACT_APP_STRIPE_CLIENT_KEY: pk_live_cLshwammkT7EzIw0I59zcM0000yM9cwWJd
+          REACT_APP_SET_AUTH: firebase
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: 683106565551
+          REACT_APP_TOKEN_ENDPOINT: https://stage0.api.pokerinplace.app/token
+          REACT_APP_FIREBASE_AUTH_DOMAIN: poker-in-place-stage.firebaseapp.com
+          REACT_APP_FIREBASE_APP_ID: poker-in-place-stage
+          REACT_APP_FIREBASE_PROJECT_ID: poker-in-place-stage
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting -P stage
+        env:
+          FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}

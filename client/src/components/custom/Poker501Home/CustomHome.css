@@ -1,0 +1,361 @@
+.custom-home {
+  color: #fff;
+  background: #fff;
+}
+
+.wrapper {
+  max-width: 1340px;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1BB0F6 url(/custom/poker501.com/pattern_bg.png) top center / contain;
+  background-repeat: repeat-x;
+  padding-bottom: 250px;
+}
+
+.custom-home .MuiButton-root {
+  max-width: 180px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 600;
+  background-color: #FFDD2C;
+  color: #000000;
+  border-radius: 14px;
+  padding: 17px 0 16px 0;
+  text-transform: initial;
+  box-shadow: none;
+}
+
+.custom-home .MuiButton-root:hover {
+  background-color: #e0bc00;
+}
+
+.custom-home .MuiButton-root--dark {
+  background-color: #141F3A;
+  color: #ffffff;
+}
+
+.custom-home .MuiButton-root--dark:hover {
+  background-color: #000000;
+}
+
+.custom-home .MuiButton-root:hover {
+  box-shadow: none;
+}
+
+.custom-home .first-section {
+  margin: 120px 0 40px;
+  padding: 0 162px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-home .first-section__title {
+  font-size: 72px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-home .first-section__description {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.custom-home .button-container-first-section {
+  text-align: center;
+}
+
+.second-section-wrapper {
+  display: flex;
+  justify-content: center;
+  scroll-margin-top: 250px;
+}
+
+.custom-home .second-section {
+  display: grid;
+  grid-template-columns: minmax(380px, 68%) minmax(300px, 32%);
+  grid-gap: 30px;
+  margin-top: -200px;
+}
+
+.custom-home .second-section .grid-wrap {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 0 30px;
+}
+
+.custom-home .hero {
+  background: #FFDD2C;
+  border-radius: 30px;
+  padding: 0 40px 50px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  color: #141F3A;
+}
+
+.custom-home .hero__name {
+  font-family: "Poppins-Medium";
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 500;
+  text-align: center;
+  margin: 35px 0 20px;
+}
+
+.custom-home .hero__icon {
+  height: 42px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.custom-home .hero__description {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.custom-home .hero__img {
+  max-width: 280px;
+  margin-top: -30px;
+}
+
+.third-section-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.custom-home .third-section {
+  display: grid;
+  grid-gap: 0 30px;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+.custom-home .third-section .item {
+  position: relative;
+  min-height: 364px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.custom-home .third-section .item__img {
+  position: absolute;
+  top: -50px;
+}
+
+.custom-home .third-section .item__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  text-align: center;
+  margin: 0;
+}
+
+.custom-home .third-section .MuiButtonBase-root {
+  position: absolute;
+  bottom: 40px;
+}
+
+.custom-home .third-section .MuiButton-root.Mui-disabled {
+  background: #F2F5FA;
+  color: #a4a9b4;
+}
+
+.custom-home .first-bg  {
+  background: #41BF64;
+ }
+
+.custom-home .second-bg  {
+  background: #1BB0F6;
+}
+
+.custom-home .third-bg  {
+  background: #2D3A59;
+}
+
+.custom-home h5 {
+  font-family: "Poppins-Bold";
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.custom-home h6 {
+  font-family: "Poppins-Bold";
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.custom-home .chance-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.custom-home .chance-section {
+  position: relative;
+  display: flex;
+  padding: 100px 530px 100px 100px;
+  background: #111D2B;
+  color: #fff;
+  border-radius: 30px;
+}
+
+.custom-home .chance-section__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+
+.custom-home .chance-section__description {
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+}
+
+.custom-home .chance-section__logo {
+  width: 188px;
+}
+
+.custom-home .chance-section__btn {
+  background: #1BB0F6;
+  color: #ffffff;
+  max-width: 100%;
+}
+
+.custom-home .chance-section__btn:hover {
+  background: #0788c4;
+}
+
+.custom-home .chance-section__child {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 95%;
+}
+
+.custom-home .footer-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.custom-home .footer-section {
+  max-width: 1240px;
+  width: 100%;
+  color: #141F3A;
+  margin-bottom: 100px;
+}
+
+.custom-home .footer-section__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-home .footer-section__logo {
+  grid-area: logo;
+}
+
+.custom-home .footer-section__social {
+  grid-area: social;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.custom-home .footer-section__social img {
+  height: 32px;
+  margin-left: 30px;
+}
+
+.custom-home .footer-section__logo,
+.custom-home .logo {
+  max-width: 180px;
+  max-height: 60px;
+}
+
+.custom-home .footer-section__divider {
+  grid-area: line;
+  background-color: #2D3A59;
+  height: 1px;
+  margin-top: 38px;
+  margin-bottom: 50px;
+}
+
+.custom-home .footer-section__links a {
+  margin-right: 50px;
+  color: #141F3A;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+/* @media screen and (max-width: 1599px) {
+  .custom-home .chance-donate-description {
+    font-size: 18px;
+  }
+
+  .custom-home .chance-child-photo {
+    margin-right: 0;
+    height: 90%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .custom-home .chance-child-photo {
+    display: none;
+  }
+
+  .chance-donate-btn {
+    grid-column-start: 3;
+  }
+
+  .custom-home .chance-donate-description {
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+
+@media screen and (max-width: 808px) {
+  .custom-home {
+    width: 100vw;
+  }
+  .custom-home .logo {
+    max-width: unset;
+    max-height: 30px;
+  }
+
+  .custom-home #logo {
+    max-width: 40vw;
+    max-height: calc(min(180px, 20vh));
+  }
+
+  #footer #footer-social img {
+    height: 15px;
+    margin: 0 5px;
+  }
+} */

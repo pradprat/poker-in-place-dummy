@@ -1,0 +1,18 @@
+.tournament .branding {
+  display: flex;
+  height: 12.5vw;
+  max-height: 150px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.tournament .branding .content {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.tournament .branding.large .content {
+  background-image: none !important;
+}

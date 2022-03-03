@@ -1,0 +1,636 @@
+.tableContainer .player {
+  display: flex;
+  width: 12rem;
+  height: 12rem;
+}
+
+/* @media screen and (orientation: landscape) and (max-height: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (orientation: landscape) and (max-height: 840px),
+       screen and (orientation: landscape) and (max-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 730px),
+       screen and (orientation: landscape) and (max-width: 1000px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 670px),
+       screen and (orientation: landscape) and (max-width: 800px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 620px),
+       screen and (orientation: landscape) and (max-width: 600px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 560px),
+       screen and (orientation: landscape) and (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+  .tableContainer .player {
+    width: 7rem;
+    height: 7rem;
+  }
+} */
+
+.tableContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.tableContainer .ended {
+  opacity: 0.1;
+}
+
+.tableContainer .options {
+  position: fixed;
+  bottom: 0;
+  /* left: 50%;
+  margin-left: -125px; */
+  right: 0;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  width: 18rem;
+  z-index: 1299;
+  opacity: 0.98;
+  white-space: nowrap;
+  /* -webkit-animation: glow-menu-small 0.75s linear infinite alternate; */
+}
+
+.table .options nav {
+  position: unset;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+
+.table .options {
+  position: fixed;
+  left: 50%;
+  bottom: 20%;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  z-index: 1299;
+  opacity: 0.98;
+  white-space: nowrap;
+  margin-left: -25%;
+  width: 50vw;
+  border: none;
+  z-index: 101;
+}
+
+.table .options > div {
+  background-color: transparent;
+}
+
+.table .options nav .MuiListItem-root {
+  width: 4.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  flex-direction: column;
+}
+
+.table .options nav .MuiListItemText-root .MuiTypography-displayBlock {
+  white-space: normal;
+  max-width: 4.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.table .options nav .MuiListItem-root svg {
+  visibility: hidden;
+}
+
+.tableContainer .table .options nav .MuiListItemIcon-root {
+  min-width: 0;
+  border: 1px solid white;
+  padding: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-color: white;
+  box-shadow: 0px 0px 5px black;
+}
+
+.tableContainer .table .options nav .MuiListItemIcon-root .MuiSvgIcon-root {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.tableContainer
+  .table
+  .options
+  nav
+  .MuiListItem-root#action-fold
+  .MuiListItemIcon-root {
+  background-image: url(/custom/poker501.com/action-fold.png);
+}
+.tableContainer
+  .table
+  .options
+  nav
+  .MuiListItem-root#action-bet
+  .MuiListItemIcon-root,
+.tableContainer
+  .table
+  .options
+  nav
+  .MuiListItem-root#action-raise
+  .MuiListItemIcon-root {
+  background-image: url(/custom/poker501.com/action-raise.png);
+}
+.tableContainer
+  .table
+  .options
+  nav
+  .MuiListItem-root#action-check
+  .MuiListItemIcon-root,
+.tableContainer
+  .table
+  .options
+  nav
+  .MuiListItem-root#action-call
+  .MuiListItemIcon-root {
+  background-image: url(/custom/poker501.com/action-check.png);
+}
+.tableContainer
+  .table
+  .options
+  nav
+  .MuiListItem-root#action-all-in
+  .MuiListItemIcon-root {
+  background-image: url(/custom/poker501.com/action-all-in.png);
+}
+
+.tableContainer #left-logo {
+  position: absolute;
+  left: -10vw;
+}
+.tableContainer #left-logo > img {
+  width: 10vw;
+}
+.tableContainer #right-logo {
+  position: absolute;
+  right: -10vw;
+}
+.tableContainer #right-logo > img {
+  width: 10vw;
+}
+
+/* .options .MuiList-root {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.options .MuiListItem-root {
+  min-width: 3rem;
+  display: flex;
+}
+
+.options .MuiListItemText-root {
+  flex: 0;
+} */
+
+.tableContainer .options .MuiListItemIcon-root {
+  min-width: 3rem;
+}
+
+.tableContainer .option {
+  padding: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.tableContainer .table {
+  /* background-image: url("/images/asfalt-light.png"); */
+  /* background-image: url("/images/black-thread-light.png"); */
+  /* background-image: url("/images/cartographer.png"); */
+  /* background-image: url("/images/brushed-alum.png"); */
+  /* background-image: url("/images/inspiration-geometry.png"); */
+  /* background-image: url("/images/padded.png"); */
+  /* background-image: url("/images/random-grey-variations.png"); */
+  /* background-image: url("/images/subtle-grey.png"); */
+  background-image: url("/images/diamond-upholstery.png");
+  /* background-image: url("/images/light-gray.png"); */
+  /* background-image: url("/images/low-contrast-linen.png"); */
+  /* background-image: url("/images/green-cup.png"); */
+  /* background-image: url("/images/fabric-of-squares.png"); */
+  /* background-image: url("/images/noisy-grid.png"); */
+  flex: 1;
+  margin: 10rem 11rem;
+  /* overflow: hidden; */
+  border-radius: 25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableContainer .p1 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6rem;
+  margin-bottom: -8rem;
+}
+
+.tableContainer .p2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -6rem;
+  margin-top: -8rem;
+}
+
+.tableContainer .p3 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-left: -8rem;
+  margin-top: -6rem;
+}
+
+.tableContainer .p4 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-right: -8rem;
+  margin-top: -6rem;
+}
+
+.tableContainer .p5 {
+  position: absolute;
+  bottom: 0;
+  left: 12.5%;
+  margin-left: -6rem;
+  margin-bottom: -8rem;
+}
+
+.tableContainer .p6 {
+  position: absolute;
+  top: 0;
+  right: 12.5%;
+  margin-right: -6rem;
+  margin-top: -8rem;
+}
+
+.tableContainer .p7 {
+  position: absolute;
+  bottom: 0;
+  right: 12.5%;
+  margin-right: -6rem;
+  margin-bottom: -8rem;
+}
+
+.tableContainer .p8 {
+  position: absolute;
+  top: 0;
+  left: 12.5%;
+  margin-left: -6rem;
+  margin-top: -8rem;
+}
+
+.tableContainer .p9 {
+  position: absolute;
+  top: 27.5%;
+  left: 5%;
+  margin-right: -6rem;
+  margin-top: -6rem;
+}
+
+.tableContainer .p11 {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+  margin-right: -6rem;
+  margin-bottom: -6rem;
+}
+
+.tableContainer .p10 {
+  position: absolute;
+  top: 27.5%;
+  right: 5%;
+  margin-left: -12rem;
+  margin-top: -6rem;
+}
+
+.tableContainer .p12 {
+  position: absolute;
+  top: 65%;
+  right: 5%;
+  margin-left: -12rem;
+  margin-bottom: -6rem;
+}
+
+.tableContainer .potCards {
+  background-color: rgba(255, 255, 255, 0.25);
+  position: absolute;
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  width: 40vw;
+  height: 25vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  max-height: 70%;
+  /* z-index: 96; */
+}
+
+.tableContainer .potCards .countdown {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.tableContainer .potCards .countdown-red {
+  color: #B00020;
+}
+
+.tableContainer .potCards .splash {
+  width: 100%;
+  height: 100%;
+  padding: 0rem;
+}
+
+.table .potCards {
+  overflow: visible;
+  background-color: transparent;
+  flex-direction: column-reverse;
+}
+
+.table .potCards .splash-hidden {
+  margin-top: -2rem;
+  display: block;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tableContainer .potCards .splash > div {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  width: 100%;
+  height: 100%;
+}
+
+.table .potCards .placeholder {
+  background: none;
+  border: 2px solid white;
+}
+
+.tableContainer .potSize {
+  text-align: center;
+  /* margin-top: -1rem; */
+  padding: 0.25rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.table.jumbo .p3 {
+  position: absolute;
+  top: calc(35% - 4.5rem);
+  left: calc(0% - 6rem);
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.table.jumbo .p9 {
+  position: absolute;
+  top: calc(65% - 4.5rem);
+  left: calc(0% - 6rem);
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.table.jumbo .p4 {
+  position: absolute;
+  top: calc(65% - 4.5rem);
+  right: calc(0% - 6rem);
+  margin-right: 0;
+  margin-top: 0;
+}
+
+.table.jumbo .p10 {
+  position: absolute;
+  top: calc(35% - 4.5rem);
+  right: calc(0% - 6rem);
+  margin-right: 0;
+  margin-top: 0;
+}
+
+@media screen and (orientation: portrait) {
+  .tableContainer .player {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .tableContainer .options {
+    bottom: unset;
+    border-bottom-width: unset;
+    border-right-width: 0;
+    border-top-width: 0;
+    top: 0;
+  }
+
+  .tableContainer .potCards {
+    width: 30vw;
+    height: 45vh;
+  }
+  .tableContainer .potCards .deck {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tableContainer .potCards .deck .flop {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0 !important;
+  }
+  .tableContainer .potCards .deck .turn {
+    margin-left: 0 !important;
+  }
+  .tableContainer .potCards .deck .river {
+    margin-left: 0 !important;
+  }
+  .tableContainer .potCards .deck .card {
+    margin-left: 0 !important;
+    margin-top: 0.5em;
+  }
+
+  .table .potCards .splash.splash-hidden {
+    margin-top: 0;
+    height: 3rem;
+  }
+
+  .tableContainer #left-logo,
+  .tableContainer #right-logo {
+    display: none;
+  }
+
+  .tableContainer .p1 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -4rem;
+    margin-bottom: -8rem;
+  }
+
+  .tableContainer .p2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -4rem;
+    margin-top: -8rem;
+  }
+
+  .tableContainer .p3 {
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .p4 {
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .p5 {
+    position: absolute;
+    top: 80%;
+    left: -20%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .p6 {
+    position: absolute;
+    top: 20%;
+    right: -20%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .p7 {
+    position: absolute;
+    top: 80%;
+    right: -20%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .p8 {
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .table.jumbo .p5 {
+    position: absolute;
+    top: 90%;
+    left: -20%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .table.jumbo .p3 {
+    position: absolute;
+    top: 40%;
+    left: -10%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .table.jumbo .p8 {
+    position: absolute;
+    top: 15%;
+    left: -10%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .table.jumbo .p9 {
+    position: absolute;
+    top: 65%;
+    left: -10%;
+    margin-left: -8rem;
+    margin-top: -4rem;
+  }
+
+  .table.jumbo .p4 {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .table.jumbo .p6 {
+    position: absolute;
+    top: 15%;
+    right: -10%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .table.jumbo .p10 {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .table.jumbo .p4 {
+    position: absolute;
+    top: 65%;
+    right: -10%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+
+  .tableContainer .table.jumbo .p7 {
+    position: absolute;
+    top: 90%;
+    right: -10%;
+    margin-right: -8rem;
+    margin-top: -4rem;
+  }
+}

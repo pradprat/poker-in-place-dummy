@@ -1,0 +1,10 @@
+configmap:
+  data:
+    MEDIASOUP_LISTEN_IP: "0.0.0.0"
+
+deployment:
+  appDockerRepo: us.gcr.io/poker-in-place/poker-in-place-mediasoup
+
+ingress:
+  hosts:
+    - dev.ms.pokerinplace.app

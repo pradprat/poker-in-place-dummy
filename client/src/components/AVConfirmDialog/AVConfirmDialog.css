@@ -1,0 +1,89 @@
+.avconfirm-dialog {
+  bottom: 0;
+  top: unset !important;
+  z-index: 100001 !important;
+}
+
+.avconfirm-dialog button {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.avconfirm-dialog .MuiDialog-container {
+  align-items: flex-end;
+}
+
+.avconfirm-dialog .MuiPaper-root {
+  margin: 0;
+  max-width: unset;
+  height: unset;
+  width: 100%;
+}
+
+.avconfirm-dialog .MuiDialog-paperScrollPaper {
+  flex-direction: row;
+}
+
+.avconfirm-dialog .MuiDialogContent-root {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.avconfirm-dialog .MuiDialogContentText-root {
+  margin-bottom: 0;
+}
+
+.avconfirm-error {
+  z-index: 1500;
+  position: fixed;
+  margin: auto;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.90);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.avconfirm-error h1 {
+  font-size: 2.5rem;
+  border-bottom: 1px solid white;
+  width: 50vw;
+}
+
+.avconfirm-error .content {
+  background-color: rgba(145, 0, 0, 0.90);
+  border-bottom: 10px double white;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avconfirm-error .button {
+  margin-bottom: 2rem;
+}
+
+.avconfirm-error .content > div {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding-bottom: 2rem;
+}
+
+.avconfirm-error .content > div span {
+  font-size: 1.8rem;
+  flex: 1;
+  display: inline-block;
+  padding-right: 5vw;
+}
+
+.avconfirm-error .content > div img {
+  max-height: 30vh;
+  max-width: 30vh;
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,26 @@
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  z-index: 99;
+}
+
+.container .sc-launcher,
+.container .sc-open-icon,
+.container .sc-closed-icon,
+.container .sc-chat-window {
+  left: 25px !important;
+  right: unset !important;
+}
+
+.container .sc-user-input--buttons .sc-user-input--button:last-child {
+  display: none;
+}
+
+.rce-smsg-text {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-wrap;
+}

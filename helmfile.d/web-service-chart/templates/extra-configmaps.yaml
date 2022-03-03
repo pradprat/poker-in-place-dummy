@@ -1,0 +1,15 @@
+{{- with .Values.extraConfigmaps }}
+  {{- range $_, $data := . }}
+---
+  {{- if .data }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ required "extraConfigmap name is required!" .name }}
+  labels:
+{{ include "app.labels" $ | indent 4 }}
+data:
+{{ toYaml .data | indent 2 }}
+  {{- end }}
+  {{- end }}
+{{- end }}

@@ -1,0 +1,205 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "processor": "disable/disable",
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "css-modules",
+    "prettier",
+    "react-hooks",
+    "disable"
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    // `js` and `jsx` are common extensions
+    // `mjs` is for `universal-router` only, for now
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never",
+        "mjs": "never"
+      }
+    ],
+    "no-use-before-define": "off",
+    "import/no-cycle": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars-experimental": "warn",
+    "prefer-destructuring": "warn",
+    "react/destructuring-assignment": "warn",
+    "import/prefer-default-export": "warn",
+    "@typescript-eslint/no-empty-interface": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "consistent-return": "off",
+    "no-empty": "off",
+    "no-shadow": "warn",
+    "no-underscore-dangle": "warn",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/no-use-before-define": "warn",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "interface",
+        "format": [
+          "PascalCase"
+        ],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "no-plusplus": "off",
+    "global-require": "off",
+    "react/prop-types": "warn", // TODO: fix
+    "react/jsx-props-no-spreading": "off",
+    "react/button-has-type": "off",
+    "jsx-a11y/interactive-supports-focus": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/media-has-caption": "warn",
+    "jsx-a11y/alt-text": "warn",
+    "import/no-named-as-default": "warn",
+    "radix": "warn",
+    "no-continue": "warn",
+    "react/no-this-in-sfc": "off",
+    "import/no-extraneous-dependencies": "warn",
+    "react/no-array-index-key": "warn",
+    "default-case": "warn", // TODO: get rid of switch cases
+    "no-bitwise": "warn", // TODO: check bitwise operations
+    "jsx-a11y/mouse-events-have-key-events": "warn",
+    "react/no-unescaped-entities": "off",
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "warn",
+    "no-await-in-loop": "warn",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "no-return-assign": "warn",
+    "jsx-a11y/control-has-associated-label": "warn",
+    "no-control-regex": "warn",
+    "eqeqeq": "warn",
+    "no-useless-escape": "warn",
+    "react/require-default-props": "warn", // get rid of prop types
+    "react/default-props-match-prop-types": "warn", // get rid of prop types
+    "react/no-unused-prop-types": "warn", // get rid of prop types
+    "react/forbid-prop-types": "warn", // get rid of prop types
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "info",
+          "error"
+        ]
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "no-extra-semi": "error",
+    "semi": ["warn", "always"],
+    "no-multi-spaces": "error",
+    "no-trailing-spaces": "error",
+    "key-spacing": "error",
+    "comma-spacing": "error",
+    "keyword-spacing": "error",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "external",
+          "builtin",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [{
+            "pattern": "^*",
+            "group": "internal"
+          },
+          {
+            "pattern": "^*/**/*",
+            "group": "internal"
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    // https://github.com/johvin/eslint-import-resolver-alias
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "src"
+        ],
+        "extensions": [
+          ".ts",
+          ".tsx",
+          ".js",
+          ".jsx",
+          ".json"
+        ]
+      }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "react": {
+      "version": "16.13.1"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+[req]
+default_bits = 2048
+default_md = sha256
+distinguished_name = req_distinguished_name
+prompt = no
+prompt = no
+x509_extensions = v3_req
+
+[req_distinguished_name]
+C = BR
+CN = localhost
+emailAddress=contact@example.com
+L = Sao Paulo
+O = example.com
+OU = example.com
+ST = Sao Paulo
+
+[v3_req]
+authorityKeyIdentifier = keyid, issuer
+basicConstraints = CA:FALSE
+extendedKeyUsage = serverAuth
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = localhost

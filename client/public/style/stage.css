@@ -1,0 +1,520 @@
+/* .MuiAppBar-colorPrimary {
+  background: rgb(0, 222, 196);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 222, 196, 1) 0%,
+    rgba(0, 141, 230, 1) 100%
+  );
+}
+
+.tableContainer .table {
+  background-image: url(/custom/poker501.com/table-felt.png);
+  box-shadow: inset 0rem 0rem 1rem black;
+}
+
+.tableContainer:before {
+  content: "";
+  margin: 9rem 10rem;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 141, 230, 1) 0%,
+    rgba(0, 222, 196, 1) 100%
+  );
+  position: absolute;
+  left: -1rem;
+  right: -1rem;
+  top: -1rem;
+  bottom: -1rem;
+  border-radius: 25rem;
+}
+
+.table .seat {
+  background-color: white;
+}
+
+.table .seat .stack {
+  background-color: rgb(0, 193, 105);
+  color: #fff;
+}
+
+.table .seat .profile {
+  background-color: rgb(243, 243, 243);
+  font-weight: 600;
+  padding-right: 0;
+}
+
+.table .seat .profile .avatar {
+  display: none;
+}
+
+.table .seat .profile .name {
+  width: 100%;
+  text-align: center;
+  margin: 0 0.5rem;
+}
+
+.video-progress svg.progress-label path {
+  stroke: url(#progress-gradient) !important;
+}
+
+.video-progress svg.progress-label {
+  transform: rotateY(-180deg) scale3d(1.2, 1.2, 1) !important;
+}
+
+.video-progress svg.progress-label circle:last-of-type {
+  fill: rgba(250, 216, 0, 1);
+}
+.video-progress svg.progress-label circle:first-of-type {
+  fill: rgba(249, 131, 65, 1);
+}
+
+.progress-gradient-start {
+  stop-color: rgba(249, 131, 65, 1);
+}
+
+.progress-gradient-stop {
+  stop-color: rgba(250, 216, 0, 1);
+}
+
+.table .away button {
+  color: #fff;
+  background-color: rgb(37, 117, 145);
+}
+
+.table .seat .profile {
+  z-index: 100;
+}
+.table .seat.p4 .profile {
+}
+.table .seat.p5 .profile {
+}
+.table .seat.p7 .profile {
+}
+
+.table .seat.p1 .profile,
+.table .seat.p2 .profile,
+.table .seat.p6 .profile,
+.table .seat.p7 .profile,
+.table .seat.p8 .profile {
+  top: 40%;
+  z-index: 96;
+  margin-left: -1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  left: 100%;
+  margin-right: unset;
+  right: unset;
+}
+
+.table .seat.p5 .profile {
+  top: 40%;
+  z-index: 96;
+  margin-right: -1rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  right: 100%;
+  margin-left: unset;
+  left: unset;
+}
+.table .seat.p5 .profile .name {
+  padding-right: 1rem;
+  text-align: left;
+}
+.table .seat.p5 .profile .stack {
+  right: 0;
+  left: unset;
+  padding-right: 1rem;
+  width: 85%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.table .seat.p1 .profile {
+  top: 50%;
+  margin-left: -1.25rem;
+}
+
+.table .seat.p3 .profile,
+.table .seat.p4 .profile {
+  margin-top: -1rem;
+  left: 50%;
+  margin-left: -50%;
+  top: 100%;
+  z-index: 101;
+}
+
+.table .seat.p1 .profile .stack,
+.table .seat.p2 .profile .stack,
+.table .seat.p6 .profile .stack,
+.table .seat.p7 .profile .stack,
+.table .seat.p8 .profile .stack {
+  left: 0;
+  padding-left: 1rem;
+  width: 85%;
+}
+
+.table .seat.p1 .profile .away {
+  left: 0;
+  width: 85%;
+}
+
+.table .seat.p1 .profile .name,
+.table .seat.p2 .profile .name,
+.table .seat.p6 .profile .name,
+.table .seat.p7 .profile .name,
+.table .seat.p8 .profile .name {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.table .seat.p2,
+.table .seat.p6,
+.table .seat.p8 {
+  margin-top: -9.5rem;
+}
+
+.table .seat.p1,
+.table .seat.p5,
+.table .seat.p7 {
+  margin-bottom: -9.5rem;
+}
+
+.table .seat.p3 {
+  margin-left: -10rem;
+}
+.table .seat.p4 {
+  margin-right: -10rem;
+}
+
+.table .seat.p2 .video-progress,
+.table .seat.p6 .video-progress,
+.table .seat.p8 .video-progress {
+  transform: rotateZ(0);
+}
+
+.table .seat.p2 .pocket .cards,
+.table .seat.p6 .pocket .cards,
+.table .seat.p8 .pocket .cards {
+  transform: rotateZ(180deg);
+  backface-visibility: hidden;
+}
+
+.table .seat.p5 .pocket {
+  left: 75%;
+  margin-top: -65%;
+}
+.table .seat.p5 .pocket .card:first-child {
+  transform: rotateZ(15deg);
+}
+.table .seat.p5 .pocket .card:nth-child(2) {
+  transform: rotateZ(25deg);
+}
+
+.table .seat.p8 .pocket {
+  margin-top: -35%;
+  left: 75%;
+}
+.table .seat.p8 .pocket .card:first-child {
+  transform: rotateZ(-25deg);
+  margin-top: 10%;
+}
+.table .seat.p8 .pocket .card:nth-child(2) {
+  transform: rotateZ(-15deg);
+  margin-top: 0;
+}
+
+.table .seat.p6 .pocket {
+  margin-top: -35%;
+  left: 25%;
+}
+.table .seat.p6 .pocket .card:first-child {
+  transform: rotateZ(25deg);
+  margin-top: -5%;
+}
+.table .seat.p6 .pocket .card:nth-child(2) {
+  transform: rotateZ(15deg);
+  margin-top: 5%;
+}
+
+.table .seat.p2 .pocket {
+  margin-top: -30%;
+}
+.table .seat.p2 .pocket .card:first-child {
+  transform: rotateZ(-10deg);
+  margin-top: 0;
+}
+.table .seat.p2 .pocket .card:nth-child(2) {
+  transform: rotateZ(-3deg);
+  margin-top: 0;
+}
+
+.table .seat.p7 .pocket {
+  left: 25%;
+  margin-top: -65%;
+}
+.table .seat.p7 .pocket .card:first-child {
+  transform: rotateZ(-25deg);
+  margin-top: 20%;
+}
+.table .seat.p7 .pocket .card:nth-child(2) {
+  transform: rotateZ(-15deg);
+}
+
+.table .seat.p1 .pocket .card:first-child {
+  transform: rotateZ(-10deg);
+}
+.table .seat.p1 .pocket .card:nth-child(2) {
+  transform: rotateZ(-3deg);
+}
+
+.table .seat.p3 .pocket {
+  left: 100%;
+  margin-left: -30%;
+}
+.table .seat.p3 .pocket .cards {
+  transform: rotateZ(90deg);
+  backface-visibility: hidden;
+}
+.table .seat.p3 .pocket .card:first-child {
+  transform: rotateZ(-10deg);
+}
+.table .seat.p3 .pocket .card:nth-child(2) {
+  transform: rotateZ(-3deg);
+}
+
+.table .seat.p4 .pocket {
+  right: 0;
+  margin-right: 70%;
+}
+.table .seat.p4 .pocket .cards {
+  transform: rotateZ(-90deg);
+  backface-visibility: hidden;
+}
+
+.table .seat.p4 .pocket .card:first-child {
+  transform: rotateZ(-10deg);
+}
+.table .seat.p4 .pocket .card:nth-child(2) {
+  transform: rotateZ(-3deg);
+}
+.table .seat.p2 .pocket.visible,
+.table .seat.p6 .pocket.visible,
+.table .seat.p8 .pocket.visible {
+  margin-top: -15%;
+}
+
+.table .seat.p2 .pocket.visible .card > div,
+.table .seat.p6 .pocket.visible .card > div,
+.table .seat.p8 .pocket.visible .card > div {
+  transform: rotateZ(180deg);
+  backface-visibility: hidden;
+}
+
+.table .seat.p2 .pocket.visible .card:first-child,
+.table .seat.p6 .pocket.visible .card:first-child,
+.table .seat.p8 .pocket.visible .card:first-child {
+  z-index: 101;
+}
+
+.table .seat.small-blind::before,
+.table .seat.big-blind::before,
+.table .seat.dealer::before {
+  content: "D";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+    left: 50%;
+    top: 0;
+    margin-top: 0.5rem;
+    margin-left: 2.5rem;
+    box-shadow: 0px 0px 0.5rem black;
+  z-index: 98;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  padding: 0.15rem;
+  background-color: rgba(0, 141, 230, 1);
+  font-size: 180%;
+}
+
+.table .seat.dealer::before {
+  content: "D";
+  background-color: rgba(0, 141, 230, 1);
+  font-size: 180%;
+}
+
+
+.table .seat.small-blind::before {
+  content: "SB";
+  color: rgb(72, 72, 72);
+  background-color: rgba(255, 182, 0, 1);
+  font-size: 120%;
+}
+
+
+.table .seat.big-blind::before {
+  content: "BB";
+  color: rgb(72, 72, 72);
+  background-color: rgba(255, 182, 0, 1);
+  font-size: 120%;
+} */
+
+/* 
+.table .chipstack .pokerchip.iso {
+    transform: none;
+}
+
+.table .chipstack .pokerchip.iso:hover {
+    transform: rotateX(45deg);
+}
+
+.table .chipstack .pokerchip.red {
+    box-shadow: none;
+    border: none;
+    background: url(/custom/poker501.com/chip-red.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.table .chipstack .pokerchip.blue {
+    box-shadow: none;
+    border: none;
+    background: url(/custom/poker501.com/chip-purple.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.table .chipstack .pokerchip.green {
+    box-shadow: none;
+    border: none;
+    background: url(/custom/poker501.com/chip-green.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.table .chipstack .pokerchip.black {
+    box-shadow: none;
+    border: none;
+    background: url(/custom/poker501.com/chip-black.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.table .chipstack .pokerchip.orange {
+    box-shadow: none;
+    border: none;
+    background: url(/custom/poker501.com/chip-purple.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.table .options nav {
+position: unset;
+flex-direction: row;
+display: flex;
+justify-content: center;
+}
+
+.table .options {
+    position: fixed;
+    left: 50%;
+    bottom: 22%;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    z-index: 1299;
+    opacity: 0.98;
+    white-space: nowrap;
+    margin-left: -25%;
+    width: 50vw;
+    border: none;
+    z-index: 100;
+}
+
+.table .options > div {
+    background-color: transparent;
+}
+
+.table .options nav .MuiListItem-root {
+    width: 6.5rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    flex-direction: column;
+}
+
+.table .options nav .MuiListItemText-root .MuiTypography-displayBlock {
+    white-space: normal;
+    max-width: 6rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.table .options nav .MuiListItem-root svg {
+    visibility: hidden;
+}
+
+.tableContainer .table .options nav .MuiListItemIcon-root {
+    min-width: 0;
+    border: 1px solid white;
+    padding: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: 100% 100%;
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+}
+
+.tableContainer .table .options nav .MuiListItem-root#action-fold .MuiListItemIcon-root {
+    background-image: url(/custom/poker501.com/action-fold.png);
+}
+.tableContainer .table .options nav .MuiListItem-root#action-bet .MuiListItemIcon-root,
+.tableContainer .table .options nav .MuiListItem-root#action-raise .MuiListItemIcon-root {
+    background-image: url(/custom/poker501.com/action-raise.png);
+}
+.tableContainer .table .options nav .MuiListItem-root#action-check .MuiListItemIcon-root,
+.tableContainer .table .options nav .MuiListItem-root#action-call .MuiListItemIcon-root {
+    background-image: url(/custom/poker501.com/action-check.png);
+}
+.tableContainer .table .options nav .MuiListItem-root#action-all-in .MuiListItemIcon-root {
+    background-image: url(/custom/poker501.com/action-all-in.png);
+}
+
+.table .seat .chipstack {
+    flex-direction: row;
+}
+
+.table .seat .chipstack .amount {
+    background-color: transparent;
+    padding: 0;
+}
+
+.table .seat .chipstack .amount span {
+    display: block;
+    text-shadow: 1px 1px #888;
+}
+
+.table .seat .chipstack .amount span.amount-action {
+    padding-top: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: -0.5rem;
+}
+.table .seat .chipstack .amount span.amount-amount {
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.table .seat .pocket.top .chipstack .amount span.amount-action {
+    margin-top: -1rem;
+    padding-top: 0;
+}
+
+.table .seat .pocket.right .chipstack {
+    margin-left: -2rem;
+} */

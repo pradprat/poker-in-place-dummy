@@ -1,0 +1,138 @@
+.game .copy-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.125);
+  padding: 0.25rem;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1200;
+}
+
+.game .loading {
+  flex: 1;
+  align-self: center;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.game .waiting-message {
+  position: absolute;
+  margin-top: -5rem;
+  top: 50%;
+  left: 25%;
+  right: 25%;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.game .join-overlay,
+.game .connecting-overlay,
+.game .room-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.game .connecting-overlay {
+  font-size: 3rem;
+  display: flex;
+}
+
+.game .connecting-overlay > div {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.game .room-overlay {
+  display: flex;
+  z-index: 96;
+}
+
+.game .room-overlay .room {
+  flex: 1;
+}
+
+.game .join-overlay video,
+.game .connecting-overlay video,
+.game .room-overlay video {
+  object-fit: cover !important;
+  height: 100%;
+}
+
+.game .room-overlay .button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  font-size: 1.5rem;
+  padding: 1rem 4rem;
+}
+
+.game .player-grid {
+  flex: 1;
+  display: grid;
+}
+
+.game .player-grid-4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.game .player-grid-8 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.game .player-grid > div {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.game .player-grid > div > div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 350%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media screen and (orientation: portrait) {
+  .game .copy-link {
+    left: unset;
+    width: 50%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.5em;
+    font-size: 2rem;
+  }
+  .game .waiting-message {
+    font-size: 2rem;
+    left: 5%;
+    right: 5%;
+    height: 6rem;
+  }
+}

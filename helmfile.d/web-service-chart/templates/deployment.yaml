@@ -1,0 +1,134 @@
+{{- with .Values.deployment }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "app.name" $ }}
+  labels:
+{{ include "app.labels" $ | indent 4 }}
+
+spec:
+  replicas: {{ .replicas }}
+  selector:
+    matchLabels:
+      app: {{ include "app.name" $ }}
+      release: {{ $.Release.Name }}
+  template:
+    metadata:
+      labels:
+{{ include "app.labels" $ | indent 8 }}
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - {{ include "app.name" $ }}
+                topologyKey: kubernetes.io/hostname
+  {{- if .securityContextPod }}
+      securityContext:
+{{ toYaml .securityContextPod | indent 8 }}
+  {{- end }}
+      containers:
+        - name: {{ include "app.name" $ }}
+          image: {{ include "app.fullImageTag" $ | quote }}
+          imagePullPolicy: Always
+
+  {{- if .command }}
+          command:
+{{ toYaml .command | indent 12 }}
+  {{- end }}
+  {{- if .args }}
+          args:
+{{ toYaml .args | indent 12 }}
+  {{- end }}
+
+  {{- if .env }}
+          env:
+{{ toYaml .env | indent 12 }}
+  {{- end }}
+
+  {{- if or $.Values.configmap.data $.Values.secret.enabled $.Values.configmap.existingName $.Values.secret.existingName }}
+          envFrom:
+    {{- if $.Values.configmap.existingName }}
+            - configMapRef:
+                name: {{ $.Values.configmap.existingName }}
+    {{- else if $.Values.configmap.data }}
+            - configMapRef:
+                name: {{ include "app.name" $ }}
+    {{- end }}
+    {{- if $.Values.secret.existingName }}
+            - secretRef:
+                name: {{ $.Values.secret.existingName }}
+    {{- else if $.Values.secret.enabled }}
+            - secretRef:
+                name: {{ include "app.name" $ }}
+    {{- end }}
+  {{- end}}
+
+          ports:
+  {{- range $name, $port := .portsByName }}
+            - name: {{ $name }}
+              containerPort: {{ $port }}
+  {{- end }}
+
+  {{- if .livenessProbe.enabled }}
+          livenessProbe:
+            failureThreshold: {{ .livenessProbe.failureThreshold }}
+            httpGet:
+              path: {{ .livenessProbe.path }}
+              port: {{ .livenessProbe.port }}
+            initialDelaySeconds: {{ .livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .livenessProbe.timeoutSeconds }}
+  {{- end }}
+  {{- if .readinessProbe.enabled }}
+          readinessProbe:
+            failureThreshold: {{ .readinessProbe.failureThreshold }}
+            httpGet:
+              path: {{ .readinessProbe.path }}
+              port: {{ .readinessProbe.port }}
+            initialDelaySeconds: {{ .readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .readinessProbe.timeoutSeconds }}
+  {{- end }}
+
+{{- include "app.resources" $ | indent 10 }}
+
+      {{- if .volumeMounts }}
+          volumeMounts:
+{{ toYaml .volumeMounts | indent 12 }}
+      {{- end }}
+
+{{- if .extraContainers }}
+{{ toYaml .extraContainers | indent 8}}
+{{- end }}
+  {{- if .securityContextContainer }}
+          securityContext:
+{{ toYaml .securityContextContainer | indent 12 }}
+  {{- end }}
+  {{- if .imagePullSecret }}
+      imagePullSecrets:
+        - name: {{ .imagePullSecret }}
+  {{- end }}
+
+  {{- if .volumes }}
+      volumes:
+{{ toYaml .volumes | indent 8 }}
+  {{- end }}
+
+  strategy:
+  {{- if and .strategy.type (eq .strategy.type "Recreate") }}
+    type: Recreate
+  {{- else }}
+    rollingUpdate:
+      maxSurge: {{ .strategy.maxSurge }}
+      maxUnavailable: {{ .strategy.maxUnavailable }}
+    type: RollingUpdate
+  {{- end}}
+
+{{- end }}

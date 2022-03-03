@@ -1,0 +1,16 @@
+{
+    "cSpell.enableFiletypes": [
+        "!javascript",
+        "!typescript"
+    ],
+    "editor.formatOnSave": true,
+    "cSpell.words": [
+        "twilio"
+    ],
+    "eslint.workingDirectories": [ "./client" ],
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+}

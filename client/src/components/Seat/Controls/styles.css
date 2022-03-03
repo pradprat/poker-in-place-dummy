@@ -1,0 +1,33 @@
+.audio-video-container {
+  pointer-events: all;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  top: 0;
+  bottom: 0px;
+  z-index: 100;
+}
+
+.audio-video-container .btn {
+  margin: 0;
+  height: 42px;
+  width: 42px;
+}
+
+.audio-video-container .btn__left {
+  margin-left: 5px;
+}
+
+.audio-video-container .btn__right {
+  margin-right: 5px;
+}
+
+.audio-video-container .btn--active {
+  background-color: #FFDD2C;
+}
+
+.audio-video-container .btn--active:hover {
+  background-color: #FFDD2C;
+}

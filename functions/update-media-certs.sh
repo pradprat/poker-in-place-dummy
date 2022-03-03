@@ -1,0 +1,10 @@
+sh cycle-media-servers.sh mediasoup-1 us-east4-c n1.media.pokerinplace.app down
+sh cycle-media-servers.sh mediasoup-1 us-east4-c n1.media.pokerinplace.app up
+sh cycle-media-servers.sh mediasoup-2 us-east1-b n2.media.pokerinplace.app down
+sh cycle-media-servers.sh mediasoup-2 us-east1-b n2.media.pokerinplace.app up
+sh cycle-media-servers.sh mediasoup-3 us-east4-c n3.media.pokerinplace.app down
+sh cycle-media-servers.sh mediasoup-3 us-east4-c n3.media.pokerinplace.app up
+sh cycle-media-servers.sh mediasoup-4 us-central1-a n4.media.pokerinplace.app down
+sh cycle-media-servers.sh mediasoup-4 us-central1-a n4.media.pokerinplace.app up
+sh cycle-media-servers.sh mediasoup-5 us-east1-b n5.media.pokerinplace.app down
+sh cycle-media-servers.sh mediasoup-5 us-east1-b n5.media.pokerinplace.app up

@@ -1,0 +1,29 @@
+.deck {
+  display: flex;
+  flex-direction: row;
+}
+
+.deck .stack {
+  display: none;
+}
+
+.deck .flop {
+  /* margin-left: 1rem; */
+  display: flex;
+  flex-direction: row;
+}
+
+.deck .turn,
+.deck .river {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.deck .flop > .card {
+  margin-left: 1rem;
+}
+
+.deck .flop > .card:first-child {
+  margin-left: 0;
+}

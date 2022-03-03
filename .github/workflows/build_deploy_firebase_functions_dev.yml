@@ -1,0 +1,25 @@
+name: DEV Firebase functions
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Deploy Develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - name: Install Functions Dependencies
+        run: |
+          cd functions
+          yarn
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only functions -P develop
+        env:
+          FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}

@@ -1,0 +1,6 @@
+.game-table {
+  flex: none !important;
+  position: static !important;
+  display: block !important;
+  zoom: 60%;
+}

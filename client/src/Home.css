@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.home .hero {
+  z-index: 1;
+  flex-direction: row;
+  display: flex !important;
+  height: 100%;
+  align-items: flex-start;
+  padding-top: 10%;
+}
+
+.home .hero > img {
+  margin-left: -10%;
+}
+
+@media (max-device-width: 600px) {
+  .home .hero {
+    flex-direction: column;
+  }
+  .home .hero > img {
+    margin-left: 0;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background-image: url("/images/asfalt-light.png");
+  background-image: url("/images/black-thread-light.png");
+  background-image: url("/images/cartographer.png");
+  background-image: url("/images/brushed-alum.png");
+  background-image: url("/images/inspiration-geometry.png");
+  background-image: url("/images/padded.png");
+  background-image: url("/images/random-grey-variations.png");
+  background-image: url("/images/subtle-grey.png");
+  background-image: url("/images/diamond-upholstery.png");
+  background-image: url("/images/light-gray.png");
+  background-image: url("/images/low-contrast-linen.png");
+  background-image: url("/images/green-cup.png"); */
+  background-image: url("/images/fabric-of-squares.png");
+  /* background-image: url("/images/noisy-grid.png"); */
+}
+
+.video-background video {
+  object-fit: cover !important;
+  height: 100%;
+}
+
+.video-background .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.4) 35%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  z-index: 0;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about {
+  z-index: 1;
+  flex-direction: column;
+  display: flex !important;
+  height: 100%;
+  align-items: flex-start;
+  padding-top: 10%;
+}
+
+.about .feedback {
+  /* bottom: 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem; */
+}
+
+.about .feedback a,
+.about .feedback iframe {
+  margin: 0 1rem;
+}
+
+@media screen and (orientation: portrait) {
+  .home .hero {
+    align-items: center;
+  }
+
+  .home .hero > div {
+    max-width: 80vw;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}

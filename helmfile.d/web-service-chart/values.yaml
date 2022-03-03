@@ -1,0 +1,117 @@
+appName: ""
+appVersion: ""
+appSystemName: ""
+
+configmap:
+  # configmap.existingName -- If provided, pull environment configuration from the existing configmap with this name, don't create a configmap
+  existingName: ""
+  # configmap.data -- The string => string map of non-sensitive environment variables that will be passed into the application
+  data: {}
+
+deployment:
+  # deployment.appDockerRepo -- The name of the docker repository that application images will be pulled from
+  appDockerRepo: ""
+  command: []
+  args: []
+  # deployment.env -- Environmental overrides
+  env: {}
+
+  # deployment.branch -- The (optional) branch name, set for sandbox deployment
+  branch: ""
+
+  # deployment.portsByName --  Named ports to be exposed by the application (this map is primarily informational, _unlike_ `service.portsByName`)
+  portsByName: {}
+
+  # deployment.replicas -- The number of pods to run for this application
+  replicas: 2
+
+  # deployment.resources -- Limits and requests for resources for each pod running under the deployment
+  resources: {}
+
+  # deployment.volumeMounts -- Where to mount volumes into Containers
+  volumeMounts: {}
+
+  # deployment.volumes -- Specifies what volumes to provide for the Pod
+  volumes: {}
+
+  livenessProbe:
+    enabled: true
+    # deployment.livenessProbe.failureThreshold -- Number of failure before probe fails
+    failureThreshold: 3
+    path: /health
+    # deployment.livenessProbe.port -- The name (or number) of the port on which liveness checks should be requested, must be a name or number from deployment.portsByName
+    port: http
+    initialDelaySeconds: 30
+    # deployment.livenessProbe.periodSeconds -- How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
+    periodSeconds: 10
+    # deployment.livenessProbe.timeoutSeconds -- Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1.
+    timeoutSeconds: 1
+
+  readinessProbe:
+    enabled: true
+    # deployment.readinessProbe.failureThreshold -- Number of failure before probe fails
+    failureThreshold: 3
+    path: /health
+    # deployment.readinessProbe.port -- The name (or number) of the port on which readiness checks should be requested, must be a name or number from deployment.portsByName
+    port: http
+    initialDelaySeconds: 30
+    # deployment.readinessProbe.periodSeconds -- How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.
+    periodSeconds: 10
+    # deployment.readinessProbe.timeoutSeconds -- Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1.
+    timeoutSeconds: 1
+
+  strategy:
+    # deployment.strategy.type -- How pods will deploy. Either `RollingUpdate`, which keeps pods on old versions running while deploying new pods, or `Recreate` which stops all pods before deploying new ones
+    type: RollingUpdate
+    # deployment.strategy.maxSurge -- Rolling deployment maxSurge
+    maxSurge: 25%
+    # deployment.strategy.maxUnavailable -- Rolling deployment maxUnavailable
+    maxUnavailable: 0%
+
+  # deployment.extraContainers -- Additional containers to be added to the controller pod.
+  # See https://github.com/lemonldap-ng-controller/lemonldap-ng-controller as example.
+  extraContainers: []
+
+  # deployment.securityContextPod -- Additional security Context options list for a pod
+  # See - https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.12/#securitycontext-v1-core for available options
+  securityContextPod: {}
+  # deployment.securityContextContainer -- Additional security Context options list for container
+  securityContextContainer: {}
+
+# extraConfigmaps -- Additional configmaps to be referenced by extraContainers
+extraConfigmaps: []
+
+# extraSecrets -- Additional secrets to be referenced by extraContainers
+extraSecrets: []
+
+ingress:
+  # ingress.enabled -- Whether to create an ingress object for the application
+  enabled: false
+
+  # ingress.annotations -- Map of annotations to apply to the created ingress object
+  annotations: {}
+
+  # ingress.hosts -- The list of hosts for which ingress traffic should be passed to this service
+  hosts: []
+
+  # ingress.tlsEnabled -- Whether to add tls hosts to the created ingress object
+  tlsEnabled: false
+
+  # ingress.port -- The name of the port on the service to pass ingress traffic to, must be one of service.portsByName
+  port: http
+
+service:
+  # service.portsByName -- The ports to expose on the application service. Names must be a subset of the names from deployment.portsByName
+  portsByName:
+    http: 80
+
+  # serviceAccount.annotations --  Map of annotations to apply to the created service account
+  annotations: {}
+
+secret:
+  # secret.enabled -- Whether to create an empty secret object and pass the values inside to the deployment as environment variables (THIS SHOULD ONLY BE USED WITH SOPS/HELM-SECRETS)
+  enabled: false
+  # secret.existingName -- If provided, pull environment configuration from the existing secret with this name, don't create a secret
+  existingName: ""
+  # secret.values -- If provided, populate the secret object with these key-values
+  values: {}

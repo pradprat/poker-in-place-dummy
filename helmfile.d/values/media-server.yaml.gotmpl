@@ -1,0 +1,39 @@
+appName: media-server
+appSystemName: media-server
+appVersion: {{ requiredEnv "APP_VERSION" }}
+deployment:
+  replicas: 1
+  name: media-server
+  tag: {{ requiredEnv "APP_VERSION" }}
+
+  portsByName:
+    http: 80
+
+  livenessProbe:
+    enabled: false
+
+  readinessProbe:
+    enabled: false
+
+  resources:
+    limits:
+      cpu: 500m
+      memory: 1024Mi
+    requests:
+      cpu: 300m
+      memory: 500Mi
+
+ingress:
+  enabled: true
+  tlsEnabled: true
+  certName: media-server
+  port: http
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
+secret:
+  enabled: false
+
+service:
+  portsByName:
+    http: 80

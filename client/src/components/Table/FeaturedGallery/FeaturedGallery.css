@@ -1,0 +1,65 @@
+.featured-gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* visibility: hidden; */
+  background-color: transparent;
+  margin: -9rem -10rem;
+}
+
+.featured-gallery .featured-gallery-container {
+  height: 100%;
+  width: 100%;
+}
+
+.featured-gallery .video-progress {
+  /* background-size: cover;
+  border-radius: 50%;
+  width: 46%;
+  height: 46%;
+  margin: 2%;
+  float: right; */
+}
+
+.featured-gallery .player {
+  width: 12rem;
+  height: 12rem;
+}
+
+.featured-gallery .player.p9 {
+  position: absolute;
+  top: 23%;
+  left: 1%;
+  margin-right: -6rem;
+  margin-top: -6rem;
+}
+
+.featured-gallery .player.p10 {
+  position: absolute;
+  top: 23%;
+  right: 1%;
+  margin-left: -12rem;
+  margin-top: -6rem;
+}
+
+.featured-gallery svg {
+  z-index: 98;
+  font-size: 4rem;
+  font-weight: 600;
+  position: absolute;
+  top: -2.5rem;
+  left: -2.5rem;
+  right: -2.5rem;
+  bottom: -2.5rem;
+}
+
+.featured-gallery svg path {
+  fill: transparent;
+}
+
+.featured-gallery svg text {
+  fill: #fff;
+  font-variant: all-small-caps;
+}

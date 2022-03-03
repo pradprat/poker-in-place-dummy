@@ -1,0 +1,98 @@
+.tableTileContainer .tableTileTable {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  margin: 5px;
+  background-color: black;
+}
+
+.tableTileContainer .tables-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tableTileContainer .tableTileTable.active {
+  position: absolute;
+  width: unset;
+  height: unset;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  padding: 3vw;
+}
+
+.tableTileContainer .tableTileTable.active .hover {
+  display: none !important;
+}
+
+.tableTileContainer .tableTileTable.active > div {
+  zoom: 1;
+  height: unset !important;
+}
+
+.tableTileContainer .tableTileTable .light-table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+  height: unset !important;
+}
+
+.tableTileContainer .tableTileTable .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.tableTileContainer .tableTileTable:hover .hover {
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.tableTileContainer .tableTileTable > div {
+  height: 222% !important;
+  transform: scale3d(0.45, 0.45, 1);
+  transform-origin: top center;
+  /* zoom: 0.45; */
+  width: 222%;
+  margin-left: -61%;
+}
+
+.tableTileContainer .tableTileTable .table .options {
+  position: absolute;
+}
+
+.tableTileContainer .search {
+  height: 4rem;
+  padding: 5px;
+}
+
+.tableTileContainer .search input {
+  font-size: 1.25rem;
+}
+
+.tableTileContainer .empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}

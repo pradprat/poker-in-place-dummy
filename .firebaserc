@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "poker-in-place",
+    "develop": "poker-in-place-develop",
+    "stage": "poker-in-place-stage",
+    "alpha": "poker-in-place-alpha"
+  }
+}

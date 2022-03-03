@@ -1,0 +1,18 @@
+.waiting-room__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.waiting-room__right .chat-list {
+  padding: 0;
+}
+
+.waiting-room__right > .chat-list {
+  padding-bottom: 24px;
+}
+
+.waiting-room__left {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}

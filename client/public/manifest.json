@@ -1,0 +1,26 @@
+{
+  "short_name": "Poker in Place",
+  "name": "Poker in Place",
+  "icons": [
+    {
+      "src": "/custom/poker501.com/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/custom/poker501.com/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/custom/poker501.com/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "gcm_sender_id": "683106565551"
+}

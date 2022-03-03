@@ -1,0 +1,47 @@
+name: Backend build and deploy
+on:
+  workflow_dispatch:
+
+env:
+  GCP_SERVICE_ACCOUNT: ${{secrets.GCP_SERVICE_ACCOUNT}}
+  GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/poker-in-place/poker-in-place/key.json #relative path is not working here
+
+jobs:
+  build_functions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build functions image
+        run: |
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+          sudo apt-get install apt-transport-https ca-certificates gnupg
+          curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+          sudo apt-get update && sudo apt-get install google-cloud-sdk
+          echo "$GCP_SERVICE_ACCOUNT" > key.json
+          gcloud auth activate-service-account github-access@poker-in-place.iam.gserviceaccount.com  --key-file=key.json --project=poker-in-place
+          gcloud auth configure-docker
+          cd functions && docker build . --file Dockerfile --tag us.gcr.io/poker-in-place/poker-in-place-functions:${GITHUB_REF##*/}-${git_hash}
+          docker push us.gcr.io/poker-in-place/poker-in-place-functions:${GITHUB_REF##*/}-${git_hash}
+
+  deploy_functions:
+    needs: build_functions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy functions image
+        run: |
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          wget https://get.helm.sh/helm-v3.5.3-linux-amd64.tar.gz
+          tar xvf helm-v3.5.3-linux-amd64.tar.gz
+          sudo mv linux-amd64/helm /usr/bin
+          rm helm-v3.5.3-linux-amd64.tar.gz && rm -rf linux-amd64
+          sudo curl -L https://github.com/roboll/helmfile/releases/download/v0.138.7/helmfile_linux_amd64 -o /usr/bin/helmfile
+          sudo chmod 0755 /usr/bin/helmfile
+          helm plugin install https://github.com/zendesk/helm-secrets
+          echo "$GCP_SERVICE_ACCOUNT" > key.json
+          gcloud auth activate-service-account github-access@poker-in-place.iam.gserviceaccount.com  --key-file=key.json --project=poker-in-place
+          gcloud container clusters get-credentials k8s-pip --region us-east1 --project poker-in-place
+          cd helmfile.d
+          APP_VERSION="${GITHUB_REF##*/}-${git_hash}" helmfile -e dev --selector app=functions sync

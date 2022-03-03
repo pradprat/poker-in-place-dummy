@@ -1,0 +1,45 @@
+appName: functions
+appSystemName: functions
+appVersion: {{ requiredEnv "APP_VERSION" }}
+deployment:
+  replicas: 1
+  name: functions
+  tag: {{ requiredEnv "APP_VERSION" }}
+
+  portsByName:
+    http: 80
+
+  livenessProbe:
+    enabled: false
+
+  readinessProbe:
+    enabled: false
+
+  resources:
+    limits:
+      cpu: 300m
+      memory: 1024Mi
+    requests:
+      cpu: 100m
+      memory: 200Mi
+
+ingress:
+  enabled: true
+  tlsEnabled: true
+  certName: functions
+  port: http
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
+secret:
+  enabled: true
+
+service:
+  portsByName:
+    http: 80
+
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70

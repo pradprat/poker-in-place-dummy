@@ -1,0 +1,10 @@
+apiVersion: v1
+name: simple-web-service
+description: Simple web-service chart for adit dockerized HTTP services
+# always leave this as "1.0.0" -- the build pipeline will adjust it as appropriate
+version: "1.0.0"
+home: https://gitlab.com/periplus
+engine: gotpl
+maintainers:
+  - email: yura.dubinin@gmail.com
+    name: 501 Team

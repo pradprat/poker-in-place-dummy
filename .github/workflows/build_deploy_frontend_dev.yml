@@ -1,0 +1,47 @@
+name: DEV Frontend
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Deploy Develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - name: Install Dependencies
+        run: yarn
+      - name: Install Client Dependencies
+        run: |
+          cd client
+          yarn
+      - name: Build
+        run: |
+          cd client
+          yarn build
+          yarn build-engine
+        env:
+          CI: false
+          REACT_APP_API_ENDPOINT: https://dev.api.pokerinplace.app
+          REACT_APP_SENTRY_DSN: https://3676ae64197841309b8ead7379d1dc0a@o384438.ingest.sentry.io/5760782
+          REACT_APP_FIREBASE_STORAGE_BUCKET: poker-in-place-develop.appspot.com
+          REACT_APP_FIREBASE_API_KEY: AIzaSyARcrQHSVPc_e1q93KG17JZqJvdTdZFXkM
+          REACT_APP_MEDIA_HOST: dev.media.pokerinplace.app
+          REACT_APP_MEDIA_PORT: 443
+          REACT_APP_STRIPE_CLIENT_KEY: pk_live_cLshwammkT7EzIw0I59zcM0000yM9cwWJd
+          REACT_APP_SET_AUTH: firebase
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: 348451380207
+          REACT_APP_TOKEN_ENDPOINT: https://dev.api.pokerinplace.app/token
+          REACT_APP_FIREBASE_AUTH_DOMAIN: poker-in-place-develop.firebaseapp.com
+          REACT_APP_FIREBASE_APP_ID: 1:348451380207:web:0b762a27218a798f69341a
+          REACT_APP_FIREBASE_PROJECT_ID: poker-in-place-develop
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting -P develop
+        env:
+          FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}

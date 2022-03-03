@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.47",
+    "@primer/octicons-react": "^9.6.0",
+    "@types/fscreen": "^1.0.1",
+    "@types/jest": "^26.0.20",
+    "@types/lodash.throttle": "^4.1.6",
+    "@types/node": "^13.9.8",
+    "@types/react": "^16.9.31",
+    "@types/react-dom": "^16.9.6",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/twilio-video": "^2.0.11",
+    "firestore-export-import": "^0.5.0",
+    "fscreen": "^1.0.2",
+    "lodash.throttle": "^4.1.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "twilio-video": "^2.3.0"
+  },
+  "devDependencies": {
+    "@sentry/cli": "^1.52.3",
+    "cls-hooked": "^4.2.2",
+    "cypress": "^4.5.0",
+    "node-firestore-import-export": "^0.14.1",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "build": "cd client && REACT_APP_BUILD_DATE=$(date -u +\"%Y-%m-%dT%H:%M:%SZ\") REACT_APP_BUILD_VERSION=$(git rev-parse HEAD) REACT_APP_MEDIA_HOST=media.pokerinplace.app REACT_APP_MEDIA_PORT=443 REACT_APP_STRIPE_CLIENT_KEY=pk_live_cLshwammkT7EzIw0I59zcM0000yM9cwWJd REACT_APP_SET_AUTH=firebase REACT_APP_FIREBASE_MESSAGING_SENDER_ID=683106565551 REACT_APP_API_ENDPOINT=https://prod0.api.pokerinplace.app REACT_APP_TOKEN_ENDPOINT=https://prod0.api.pokerinplace.app/token yarn build",
+    "build-with-engine": "cd client && CI= REACT_APP_SENTRY_DSN=\"https://db2bea16c81442399d31c1ae9f11e530@o384438.ingest.sentry.io/5215675\" REACT_APP_BUILD_DATE=$(date -u +\"%Y-%m-%dT%H:%M:%SZ\") REACT_APP_BUILD_VERSION=$(git rev-parse HEAD) REACT_APP_MEDIA_HOST=media.pokerinplace.app REACT_APP_MEDIA_PORT=443 REACT_APP_FIREBASE_API_KEY=AIzaSyBh2Nla_2aLhCrc7moj1MVm0LHMzwGGygQ REACT_APP_STRIPE_CLIENT_KEY=pk_live_cLshwammkT7EzIw0I59zcM0000yM9cwWJd REACT_APP_SET_AUTH=firebase REACT_APP_FIREBASE_MESSAGING_SENDER_ID=683106565551 REACT_APP_API_ENDPOINT=https://prod0.api.pokerinplace.app REACT_APP_TOKEN_ENDPOINT=https://prod0.api.pokerinplace.app/token REACT_APP_FIREBASE_AUTH_DOMAIN=poker-in-place.firebaseapp.com REACT_APP_FIREBASE_APP_ID=poker-in-place  REACT_APP_FIREBASE_PROJECT_ID=poker-in-place yarn build && yarn build-engine",
+    "build-with-engine-stage": "cd client &&  CI= REACT_APP_ASAYER=7201017855600676  REACT_APP_API_ENDPOINT=https://stage0.api.pokerinplace.app REACT_APP_SENTRY_DSN=\"https://7c470a527ab849bfa4017c9177b30039@o384438.ingest.sentry.io/5462699\" REACT_APP_BUILD_DATE=$(date -u +\"%Y-%m-%dT%H:%M:%SZ\") REACT_APP_BUILD_VERSION=$(git rev-parse HEAD) REACT_APP_FIREBASE_STORAGE_BUCKET=poker-in-place-stage.appspot.com REACT_APP_FIREBASE_API_KEY=AIzaSyCgClTLMJx-nQAVVnAhneXQhY9nFBI9Aa0 REACT_APP_MEDIA_HOST=media.pokerinplace.app REACT_APP_MEDIA_PORT=443 REACT_APP_STRIPE_CLIENT_KEY=pk_live_cLshwammkT7EzIw0I59zcM0000yM9cwWJd REACT_APP_SET_AUTH=firebase REACT_APP_FIREBASE_MESSAGING_SENDER_ID=683106565551 REACT_APP_TOKEN_ENDPOINT=https://stage0.api.pokerinplace.app/token REACT_APP_FIREBASE_AUTH_DOMAIN=poker-in-place-stage.firebaseapp.com REACT_APP_FIREBASE_APP_ID=poker-in-place-stage REACT_APP_FIREBASE_PROJECT_ID=poker-in-place-stage yarn build && yarn build-engine",
+    "build-with-engine-alpha": "cd client && CI= REACT_APP_ASAYER=8670262836172981 REACT_APP_API_ENDPOINT=https://alpha0.api.pokerinplace.app REACT_APP_SENTRY_DSN=\"https://9df8ab5d040f454ebaff4f16f1b20044@o384438.ingest.sentry.io/5462704\" REACT_APP_BUILD_DATE=$(date -u +\"%Y-%m-%dT%H:%M:%SZ\") REACT_APP_BUILD_VERSION=$(git rev-parse HEAD) REACT_APP_FIREBASE_STORAGE_BUCKET=poker-in-place-alpha.appspot.com REACT_APP_FIREBASE_API_KEY=AIzaSyAdj3k8r2gxND16zJdX-Q8fhhc5Ynq0lRU REACT_APP_MEDIA_HOST=media.pokerinplace.app REACT_APP_MEDIA_PORT=443 REACT_APP_STRIPE_CLIENT_KEY=pk_live_cLshwammkT7EzIw0I59zcM0000yM9cwWJd REACT_APP_SET_AUTH=firebase REACT_APP_FIREBASE_MESSAGING_SENDER_ID=683106565551 REACT_APP_TOKEN_ENDPOINT=https://alpha0.api.pokerinplace.app/token REACT_APP_FIREBASE_AUTH_DOMAIN=poker-in-place-alpha.firebaseapp.com REACT_APP_FIREBASE_APP_ID=poker-in-place-alpha REACT_APP_FIREBASE_PROJECT_ID=poker-in-place-alpha yarn build && yarn build-engine",
+    "deploy": "firebase deploy",
+    "deploy-docker": "cd functions && npm run deploy-docker",
+    "deploy-api-prod": "yarn deploy-docker && cd functions && npm run deploy-api-prod",
+    "deploy-api-stage": "yarn deploy-docker && cd functions && npm run deploy-api-stage",
+    "deploy-api-alpha": "yarn deploy-docker && cd functions && npm run deploy-api-alpha",
+    "build-then-deploy": "yarn build-with-engine && yarn deploy-api-prod && firebase functions:config:set --project poker-in-place app.version=\"$(git rev-parse HEAD)\" && yarn deploy --project poker-in-place  && node release.js",
+    "build-then-deploy-stage": "yarn build-with-engine-stage && yarn deploy-api-stage && firebase functions:config:set --project poker-in-place-stage app.version=\"$(git rev-parse HEAD)\" && yarn deploy --project poker-in-place-stage && node release.js",
+    "build-then-deploy-client-stage": "yarn build-with-engine-stage && firebase deploy --project poker-in-place-stage  --only hosting",
+    "build-then-deploy-client-alpha": "yarn build-with-engine-alpha && firebase deploy  --project poker-in-place-alpha --only hosting",
+    "build-then-deploy-client": "yarn build-with-engine && firebase deploy --only hosting",
+    "build-then-deploy-alpha": "yarn build-with-engine-alpha && yarn deploy-api-alpha && firebase functions:config:set --project poker-in-place-alpha app.version=\"$(git rev-parse HEAD)\" && yarn deploy --project poker-in-place-alpha && node release.js"
+  }
+}

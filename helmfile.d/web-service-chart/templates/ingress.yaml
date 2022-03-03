@@ -1,0 +1,39 @@
+{{- with .Values.ingress }}
+  {{- if .enabled }}
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "app.name" $ }}
+  labels:
+{{ include "app.labels" $ | indent 4 }}
+    {{- if .annotations }}
+  annotations:
+{{ toYaml .annotations | indent 4 }}
+    {{- end }}
+spec:
+    {{- if .tlsEnabled }}
+  tls:
+    - hosts:
+      {{- range .hosts }}
+        - {{ . }}
+      {{- end }}
+      secretName: {{ .certName }}-secret
+    {{- end }}
+  rules:
+    {{ $port := .port }}
+    {{- range .hosts }}
+      {{- if $.Values.deployment.branch }}
+    - host: {{ $.Values.deployment.branch }}.{{ . }}
+      {{- else }}
+    - host: {{ . }}
+      {{- end }}
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: {{ include "app.name" $ }}
+              servicePort: {{ $port }}
+    {{ end }}
+  {{ end }}
+{{- end }}

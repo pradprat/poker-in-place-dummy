@@ -1,0 +1,19 @@
+.debug-tournament__tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.debug-tournament__table {
+  width: calc(50vw - 20px);
+  height: calc(50vh - 40px);
+  position: relative;
+  margin: 5px;
+  background-color: black;
+  overflow-y: hidden;
+}
+
+.debug-tournament .playerlist {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 4vw;
+}

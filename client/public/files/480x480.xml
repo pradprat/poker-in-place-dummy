@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bandwidth>
+<item>
+	 <!-- Only affects the Flash recorder. Don't change -->
+	<nm>640x360@30fps</nm>
+	
+	<!-- Only affects the Flash recorder. Don't change -->
+	<df>0</df> 
+	
+	<!-- Only affects the Flash recorder.
+	This is the maximum amount of bytes that the video (not audio) can consume per second. 
+	If it is set to 0, the video stream from the user to the media server will consume as much bandwidth as possible to maintain the picture quality. 
+	Multiply by 8 to get the value in bits.-->
+	<bytes>0</bytes> 
+	
+	<!-- Only affects the Flash recorder. This is the picture quality. 
+	If set to 0 it will use as much quality as possible, without exceeding the <bytes> value. 
+	Maximum is 100 but that will consume EXCESSIVE bandwidth. A value between 85-95 will produce really good picture quality! -->
+	<q>60</q>
+	
+	<!-- Only affects the Flash recorder. This defines the video frame rate. 10, 15, 30 fps, etc... . Some old web cams can only capture up to 15fps.-->
+	<fps>20</fps>
+	
+	<!-- Only affects the Flash recorder. Key frames. This tells HDFVR that every <kfps> frames a full frame will be sent to the media server . 
+	The rest of the frames contain just the changes from the previous frame. 
+	This settings is not used by HDFRV as it creates enough keyframes by default. -->
+	<kfps>15</kfps> 
+	
+	<!--  The desired width and height of the captured video in pixels -->
+	<w>480</w><h>480</h>
+	
+	 <!-- Only affects the Flash recorder. Don't change. -->			
+	<snd>44</snd>
+	
+	<!-- Only affects the Flash recorder. Don't change. -->
+	<sndSilencelevel>0</sndSilencelevel> 
+	
+	<!-- Only affects the Flash recorder. Don't change -->
+	<vcodec>h264_w</vcodec> 
+	
+</item>
+</bandwidth>

@@ -1,0 +1,20 @@
+{{- with .Values.service }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "app.name" $ }}
+  labels:
+{{ include "app.labels" $ | indent 4 }}
+spec:
+  type: NodePort
+  ports:
+  {{- range $name, $port := .portsByName }}
+    - name: {{ $name }}
+      port: {{ $port }}
+      targetPort: {{ $name }}
+  {{- end }}
+
+  selector:
+    app: {{ include "app.name" $ }}
+    release: {{ $.Release.Name }}
+{{- end }}

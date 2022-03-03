@@ -1,0 +1,24 @@
+.profile {
+}
+
+.profile .MuiCardHeader-action {
+  align-self: center;
+}
+
+.profile #product .selected .MuiPaper-root {
+  background-color: #777;
+}
+
+.profile #product > * {
+  margin-bottom: 0.5rem;
+}
+
+.profile #product .MuiFormControlLabel-root {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.profile #product > label {
+  margin-left: 0;
+  margin-right: 0;
+}

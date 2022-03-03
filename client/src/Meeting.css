@@ -1,0 +1,81 @@
+
+
+body > #zmmtg-root {
+  position: absolute;
+  left: 0vw;
+  right: 0vw;
+  top: 0vh;
+  bottom: 0vh;
+  width: auto;
+  height: auto;
+}
+
+body > #zmmtg-root > .meeting-app {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body > #zmmtg-root > .meeting-app > .meeting-client {
+  position: relative;
+}
+
+body > #zmmtg-root > .meeting-app > .meeting-client > .meeting-client-inner {
+  position: relative;
+}
+
+body > #zmmtg-root > .meeting-app > .meeting-client > .meeting-client-inner .active-video-container__wrap {
+
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body > #zmmtg-root > .meeting-app > div {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative;
+}
+
+body > #zmmtg-root > .meeting-app > div > #wc-loading {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body > #zmmtg-root #wc-container-left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body > #zmmtg-root #wc-container-left #wc-header {
+  min-width: unset;
+}
+
+body > #zmmtg-root  .main-layout {
+  /* flex: 1; */
+}
+
+.sharing-layout, .full-screen-icon, .notification-manager, .active-video-container__avatar {
+  display: none;
+}
+body > #zmmtg-root  .join-dialog {
+  width: 100% !important;
+}
+body > #zmmtg-root > .meeting-app > .meeting-client footer {
+  /* display: none; */
+  color: #ffffff;
+}
+
+body > #zmmtg-root > .meeting-app > .meeting-client footer button {
+  color: #fff;
+}
+
+body > #zmmtg-root > .meeting-app > .meeting-client footer .audio-option-menu,
+body > #zmmtg-root > .meeting-app > .meeting-client footer .video-option-menu {
+  display: none;
+}
+
+button[aria-label="Share Screen"] {
+  display: none;
+}

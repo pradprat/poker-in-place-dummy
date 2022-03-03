@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@types/puppeteer": "^3.0.1",
+    "puppeteer": "^5.2.1"
+  },
+  "scripts": {
+    "start": "npx ts-node index.ts"
+  }
+}

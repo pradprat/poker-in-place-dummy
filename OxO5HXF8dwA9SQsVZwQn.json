@@ -1,0 +1,846 @@
+{
+  "__collections__": {
+    "hands": {
+      "1588464368837": {
+        "smallBlind": 0.25,
+        "smallBlindId": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+        "activeDeckId": "2020-05-03T00:06:08.837Z",
+        "bigBlind": 0.5,
+        "activeRound": "river",
+        "id": "1588464368837",
+        "dealerId": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+        "actingPlayerId": null,
+        "rounds": [
+          {
+            "type": "pre-flop",
+            "actions": [
+              {
+                "action": "bet",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464369699,
+                "contribution": 0.25,
+                "raise": 0.25,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": false,
+                "total": 0.25
+              },
+              {
+                "conforming": true,
+                "allIn": false,
+                "voluntary": false,
+                "total": 0.5,
+                "action": "raise",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464369699,
+                "contribution": 0.5,
+                "raise": 0.25
+              },
+              {
+                "action": "call",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+                "timestamp": 1588464385540,
+                "contribution": 0.5,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0.5
+              },
+              {
+                "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+                "timestamp": 1588464393723,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "fold"
+              },
+              {
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                "timestamp": 1588464398895,
+                "contribution": 0.5,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0.5,
+                "action": "call"
+              },
+              {
+                "action": "call",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464409515,
+                "contribution": 0.25,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0.5
+              },
+              {
+                "allIn": false,
+                "voluntary": true,
+                "total": 0.5,
+                "action": "check",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464430740,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false
+              }
+            ],
+            "timestamp": 1588464369699,
+            "cards": [],
+            "active": false,
+            "firstToActOffset": 3
+          },
+          {
+            "timestamp": 1588464431242,
+            "cards": ["Td", "Kh", "4h"],
+            "active": false,
+            "firstToActOffset": 1,
+            "type": "flop",
+            "actions": [
+              {
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464438418,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false
+              },
+              {
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464446045,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false
+              },
+              {
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+                "timestamp": 1588464462236,
+                "contribution": 0,
+                "raise": 0
+              },
+              {
+                "timestamp": 1588464467643,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2"
+              }
+            ]
+          },
+          {
+            "active": false,
+            "firstToActOffset": 1,
+            "type": "turn",
+            "actions": [
+              {
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464474262,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false
+              },
+              {
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464483674,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false
+              },
+              {
+                "timestamp": 1588464490872,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1"
+              },
+              {
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                "timestamp": 1588464502163,
+                "contribution": 0,
+                "raise": 0
+              }
+            ],
+            "timestamp": 1588464468142,
+            "cards": ["2d"]
+          },
+          {
+            "type": "river",
+            "actions": [
+              {
+                "voluntary": true,
+                "total": 0,
+                "action": "fold",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464513125,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false
+              },
+              {
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464554691,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false
+              },
+              {
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+                "timestamp": 1588464558641,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false
+              },
+              {
+                "voluntary": true,
+                "total": 0.5,
+                "action": "raise",
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                "timestamp": 1588464589859,
+                "contribution": 0.5,
+                "raise": 0.5,
+                "conforming": true,
+                "allIn": false
+              },
+              {
+                "timestamp": 1588464599707,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "fold",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2"
+              },
+              {
+                "action": "call",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+                "timestamp": 1588464605006,
+                "contribution": 0.5,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0.5
+              }
+            ],
+            "timestamp": 1588464504394,
+            "cards": ["Qd"],
+            "active": false,
+            "firstToActOffset": 1
+          }
+        ],
+        "cardsDealt": 15,
+        "payouts": [
+          {
+            "handCards": ["Qc", "Qd", "4c", "4h", "Kh"],
+            "cards": ["Qc", "4c"],
+            "handDescription": "Two Pair, Q's & 4's",
+            "total": 3,
+            "amount": 2,
+            "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2"
+          },
+          {
+            "total": 0,
+            "amount": 0,
+            "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+            "handCards": [],
+            "cards": [],
+            "handDescription": null
+          },
+          {
+            "amount": -0.5,
+            "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+            "handCards": [],
+            "cards": [],
+            "handDescription": null,
+            "total": 0
+          },
+          {
+            "handCards": ["As", "Kh", "Qd", "Td", "7c"],
+            "cards": ["7c", "As"],
+            "handDescription": "A High",
+            "total": 0,
+            "amount": -1,
+            "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1"
+          },
+          {
+            "handCards": [],
+            "cards": [],
+            "handDescription": null,
+            "total": 0,
+            "amount": -0.5,
+            "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2"
+          }
+        ],
+        "bigBlindId": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "payoutsApplied": true,
+        "playerIds": [
+          "NhgN0LA14nZXPSIofy83dSP6WKB2",
+          "6NVOzwqdOsavsasr8GKZiOUolRk1",
+          "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+          "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+          "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2"
+        ],
+        "__collections__": {
+          "players": {
+            "6NVOzwqdOsavsasr8GKZiOUolRk1": {
+              "actions": [],
+              "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+              "cards": ["7c", "As"],
+              "stack": 20,
+              "__collections__": {}
+            },
+            "BVMEMkA0nlNzelePEE2LlRPYvuU2": {
+              "cards": ["2c", "8s"],
+              "stack": 20,
+              "actions": [],
+              "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+              "__collections__": {}
+            },
+            "NhgN0LA14nZXPSIofy83dSP6WKB2": {
+              "actions": [],
+              "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+              "cards": ["3d", "7s"],
+              "stack": 20,
+              "__collections__": {}
+            },
+            "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2": {
+              "actions": [],
+              "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+              "cards": ["8h", "6h"],
+              "stack": 20,
+              "__collections__": {}
+            },
+            "afxXDvHy0KTq55zIcArp5Y1TIPg2": {
+              "actions": [],
+              "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+              "cards": ["Qc", "4c"],
+              "stack": 20,
+              "__collections__": {}
+            }
+          }
+        }
+      },
+      "1588464626092": {
+        "rounds": [
+          {
+            "type": "pre-flop",
+            "actions": [
+              {
+                "allIn": false,
+                "voluntary": false,
+                "total": 0.25,
+                "action": "bet",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464626805,
+                "contribution": 0.25,
+                "raise": 0.25,
+                "conforming": false
+              },
+              {
+                "voluntary": false,
+                "total": 0.5,
+                "action": "raise",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+                "timestamp": 1588464626805,
+                "contribution": 0.5,
+                "raise": 0.25,
+                "conforming": true,
+                "allIn": false
+              },
+              {
+                "timestamp": 1588464634639,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "fold",
+                "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2"
+              },
+              {
+                "timestamp": 1588464640953,
+                "contribution": 0.5,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0.5,
+                "action": "call",
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2"
+              },
+              {
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464649153,
+                "contribution": 1.25,
+                "raise": 0.75,
+                "conforming": true,
+                "allIn": false,
+                "voluntary": true,
+                "total": 1.25,
+                "action": "raise"
+              },
+              {
+                "timestamp": 1588464664642,
+                "contribution": 1.75,
+                "raise": 0.75,
+                "conforming": true,
+                "allIn": false,
+                "voluntary": true,
+                "total": 2,
+                "action": "raise",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2"
+              },
+              {
+                "voluntary": true,
+                "total": 2,
+                "action": "call",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+                "timestamp": 1588464673736,
+                "contribution": 1.5,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false
+              },
+              {
+                "action": "call",
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                "timestamp": 1588464680273,
+                "contribution": 1.5,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 2
+              },
+              {
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 2,
+                "action": "call",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464691259,
+                "contribution": 0.75,
+                "raise": 0
+              }
+            ],
+            "timestamp": 1588464626806,
+            "cards": [],
+            "active": false,
+            "firstToActOffset": 3
+          },
+          {
+            "type": "flop",
+            "actions": [
+              {
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588464697982,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check"
+              },
+              {
+                "timestamp": 1588464718160,
+                "contribution": null,
+                "raise": null,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": null,
+                "action": "raise",
+                "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1"
+              },
+              {
+                "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                "timestamp": 1588464721982,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check"
+              },
+              {
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+                "timestamp": 1588464737723,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false
+              },
+              {
+                "timestamp": 1588465321978,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false,
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2"
+              }
+            ],
+            "timestamp": 1588464691840,
+            "cards": ["Jh", "7h", "4c"],
+            "active": false,
+            "firstToActOffset": 1
+          },
+          {
+            "timestamp": 1588465322719,
+            "cards": ["8s"],
+            "active": true,
+            "firstToActOffset": 1,
+            "type": "turn",
+            "actions": [
+              {
+                "allIn": false,
+                "voluntary": true,
+                "total": 0,
+                "action": "check",
+                "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+                "timestamp": 1588465454014,
+                "contribution": 0,
+                "raise": 0,
+                "conforming": false
+              }
+            ]
+          }
+        ],
+        "cardsDealt": 14,
+        "payouts": [],
+        "bigBlindId": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+        "payoutsApplied": false,
+        "playerIds": [
+          "NhgN0LA14nZXPSIofy83dSP6WKB2",
+          "6NVOzwqdOsavsasr8GKZiOUolRk1",
+          "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+          "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+          "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2"
+        ],
+        "smallBlind": 0.25,
+        "smallBlindId": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "activeDeckId": "2020-05-03T00:10:26.092Z",
+        "bigBlind": 0.5,
+        "activeRound": "turn",
+        "id": "1588464626092",
+        "dealerId": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+        "actingPlayerId": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+        "__collections__": {
+          "players": {
+            "6NVOzwqdOsavsasr8GKZiOUolRk1": {
+              "actions": [],
+              "uid": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+              "cards": ["Js", "Kh"],
+              "stack": 19,
+              "__collections__": {}
+            },
+            "BVMEMkA0nlNzelePEE2LlRPYvuU2": {
+              "actions": [],
+              "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+              "cards": ["3s", "Ks"],
+              "stack": 20,
+              "__collections__": {}
+            },
+            "NhgN0LA14nZXPSIofy83dSP6WKB2": {
+              "actions": [],
+              "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+              "cards": ["Kc", "Jc"],
+              "stack": 19.5,
+              "__collections__": {}
+            },
+            "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2": {
+              "cards": ["6c", "9c"],
+              "stack": 19.5,
+              "actions": [],
+              "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+              "__collections__": {}
+            },
+            "afxXDvHy0KTq55zIcArp5Y1TIPg2": {
+              "cards": ["7s", "9d"],
+              "stack": 22,
+              "actions": [
+                {
+                  "allIn": false,
+                  "voluntary": true,
+                  "total": 0,
+                  "action": "fold",
+                  "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                  "timestamp": 1588465491710,
+                  "contribution": 0,
+                  "raise": 0,
+                  "conforming": false
+                },
+                {
+                  "conforming": false,
+                  "allIn": false,
+                  "voluntary": true,
+                  "total": 0,
+                  "action": "check",
+                  "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                  "timestamp": 1588465491710,
+                  "contribution": 0,
+                  "raise": 0
+                },
+                {
+                  "allIn": false,
+                  "voluntary": true,
+                  "total": 0.5,
+                  "action": "raise",
+                  "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+                  "timestamp": 1588465491710,
+                  "contribution": 0.5,
+                  "raise": 0.5,
+                  "conforming": true
+                }
+              ],
+              "uid": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+              "__collections__": {}
+            }
+          }
+        }
+      }
+    },
+    "messages": {
+      "3Hh6QLYo18FVbw9CPqC9": {
+        "timestamp": 1588464431104,
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "same",
+        "__collections__": {}
+      },
+      "4wvgROS0QPPs6TUICE2c": {
+        "timestamp": 1588464325493,
+        "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "message": "how many on right now?",
+        "__collections__": {}
+      },
+      "GXGjv1Ku26A6bM42Ha7v": {
+        "message": "Brian. Start your zoom meeting",
+        "timestamp": 1588464906307,
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "__collections__": {}
+      },
+      "GYTEKkw8ahGIYaiWtNtK": {
+        "message": "Next man in and we get started",
+        "timestamp": 1588463991482,
+        "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+        "__collections__": {}
+      },
+      "IqIrx2nood29kmJEqX39": {
+        "message": "brains meeting invite",
+        "timestamp": 1588464489751,
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "__collections__": {}
+      },
+      "OfIzUbcjwu6wFJGCo6R6": {
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "The Chinese are stealing all of our data right now...including face recognition ",
+        "timestamp": 1588464319736,
+        "__collections__": {}
+      },
+      "SDtpTLhh6ueRV9HoZeFB": {
+        "message": "use zoom",
+        "timestamp": 1588464478331,
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "__collections__": {}
+      },
+      "SZx9pVvYlJZVJvcFRNvf": {
+        "timestamp": 1588464104692,
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "I dont see anything yet",
+        "__collections__": {}
+      },
+      "SjxcD5Gg0qhbYkcqNzZW": {
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "kyle has n to the power of $$$$",
+        "timestamp": 1588464776156,
+        "__collections__": {}
+      },
+      "Tzy6txoRPfANSrTQS9li": {
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "I received an error message",
+        "timestamp": 1588464355567,
+        "__collections__": {}
+      },
+      "UoV5l8kV3JgRaKBKsjC9": {
+        "timestamp": 1588464546617,
+        "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "message": "i left and then rejoined, now it's working for me",
+        "__collections__": {}
+      },
+      "WnSUerCdDgi8VggjaHv7": {
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "nope",
+        "timestamp": 1588464723010,
+        "__collections__": {}
+      },
+      "WtJVk2SMCxOMjnISjb6S": {
+        "message": "did the game freeze?",
+        "timestamp": 1588465074277,
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "__collections__": {}
+      },
+      "cZ9yMe9GWxM6i91nLJii": {
+        "timestamp": 1588464332921,
+        "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "message": "says no new additions once we start the game...",
+        "__collections__": {}
+      },
+      "ikeWP79pMenc9OZI5DP0": {
+        "timestamp": 1588464334851,
+        "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "message": "kinda dumb",
+        "__collections__": {}
+      },
+      "jp6yXGFVisieF7CHAYM9": {
+        "message": "Dave has to start the game",
+        "timestamp": 1588464157019,
+        "uid": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+        "__collections__": {}
+      },
+      "m9jN5SeyBfDCyfYRJMR4": {
+        "uid": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+        "message": "i'm lacking video/sound",
+        "timestamp": 1588464418200,
+        "__collections__": {}
+      },
+      "qKP5SolvNElJlYPS8UZY": {
+        "uid": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+        "message": "That is what she said",
+        "timestamp": 1588464254187,
+        "__collections__": {}
+      }
+    }
+  },
+  "timestamp": 1588464295080,
+  "players": {
+    "BVMEMkA0nlNzelePEE2LlRPYvuU2": {
+      "role": "player",
+      "active": false,
+      "position": 2,
+      "stack": 20,
+      "email": "arusso48@gmail.com",
+      "name": "Alessandro R.",
+      "contributed": 20,
+      "id": "BVMEMkA0nlNzelePEE2LlRPYvuU2",
+      "photoURL": "https://lh3.googleusercontent.com/a-/AOh14GhlIsUmy_gXxipWd1cGH1sEgkqaRLq7S6ch-zpkwA"
+    },
+    "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2": {
+      "role": "player",
+      "active": false,
+      "position": 4,
+      "stack": 19.5,
+      "email": "hinchcliffe.brian@gmail.com",
+      "name": "Brian Hinchcliffe",
+      "contributed": 20,
+      "id": "RQPBOjlA3ASJ8ZptHcRSiDO40kJ2",
+      "photoURL": "https://lh3.googleusercontent.com/a-/AOh14Gj6W6W4NKYQcr08WazVsiYEUwBKqLy29TipLVXnbA"
+    },
+    "6NVOzwqdOsavsasr8GKZiOUolRk1": {
+      "active": false,
+      "position": 1,
+      "stack": 19,
+      "email": "zim_kyle@yahoo.com",
+      "name": "kyle zimmerman",
+      "contributed": 20,
+      "photoURL": "https://lh6.googleusercontent.com/-MgrRM0M0fGA/AAAAAAAAAAI/AAAAAAAAAAA/AAKWJJMb0qUWT2IXnsAeweUT3rpvs1YegQ/photo.jpg",
+      "id": "6NVOzwqdOsavsasr8GKZiOUolRk1",
+      "role": "player"
+    },
+    "NhgN0LA14nZXPSIofy83dSP6WKB2": {
+      "photoURL": "https://lh3.googleusercontent.com/a-/AOh14GgjlSIcszC8Bju3KdKOMFb-ss-4-iF0SAJ1NFdsFMA",
+      "id": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+      "role": "player",
+      "active": true,
+      "position": 0,
+      "stack": 19.5,
+      "email": "droot1984@gmail.com",
+      "name": "Dave Root",
+      "contributed": 20
+    },
+    "afxXDvHy0KTq55zIcArp5Y1TIPg2": {
+      "active": true,
+      "position": 3,
+      "stack": 22,
+      "email": "overtaxedamerican@gmail.com",
+      "name": "chad smith",
+      "contributed": 20,
+      "id": "afxXDvHy0KTq55zIcArp5Y1TIPg2",
+      "photoURL": "https://lh5.googleusercontent.com/-mSQEm7i1TaE/AAAAAAAAAAI/AAAAAAAAAA8/AAKWJJMC0k9sz1C3VmLWqgFmvnbz9tFqxQ/photo.jpg",
+      "role": "player"
+    }
+  },
+  "paymentId": "pi_1GeUb7AG8VGI2ukyvW6KASc5",
+  "paymentSessionId": "cs_live_0c4ZH52IFBZeLjoISwyJwjdoEdO7Hc2fB4LC5a87aO6mLCGUs4IcBbKm",
+  "name": "Friendly Poker Game",
+  "hands": [],
+  "activeHandId": "1588464626092",
+  "organizerId": "NhgN0LA14nZXPSIofy83dSP6WKB2",
+  "mode": "premium-4-120",
+  "buyIn": 20,
+  "blindDoublingInterval": -1,
+  "increment": 0.25,
+  "stage": "active",
+  "startingBigBlind": 0.5,
+  "currentBigBlind": 0.5,
+  "type": "open"
+}

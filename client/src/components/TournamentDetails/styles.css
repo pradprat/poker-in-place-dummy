@@ -1,0 +1,56 @@
+.tournamentdetails {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  z-index: 102;
+}
+
+.tournamentdetails > div.countdown {
+  font-family: "Aldrich", monospace;
+  font-size: 3rem;
+  text-shadow: 0 0 20px #32a86f, 0 0 20px rgba(10, 175, 230, 0);
+  text-align: center;
+  position: relative;
+  line-height: 3rem;
+}
+
+.countdown,
+.blinds {
+  display: flex;
+}
+
+.countdown > div,
+.blinds > div {
+  text-align: center;
+  flex: 1;
+}
+
+.countdown > *:first-child,
+.blinds > *:first-child {
+  margin-right: 0.75rem;
+}
+
+.countdown > svg {
+  font-size: 3rem;
+}
+
+.tournamentdetails > div.blinds {
+  font-family: "Aldrich", monospace;
+  font-size: 2rem;
+  /* text-shadow: 0 0 20px #32a86f, 0 0 20px rgba(10, 175, 230, 0); */
+  text-align: center;
+  position: relative;
+  line-height: 3rem;
+  margin: 0rem 0;
+}
+
+.blinds > svg {
+  font-size: 3rem;
+}
+
+.rebuy-clock {
+  font-size: 1.1rem;
+  margin-left: 5px;
+}

@@ -1,0 +1,15 @@
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.welcomeMessageBtn {
+  margin-right: 20px !important;
+}
+
+.record-video__recorder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}

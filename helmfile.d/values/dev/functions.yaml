@@ -1,0 +1,41 @@
+configmap:
+  data:
+    GOOGLE_APPLICATION_CREDENTIALS: "/service/creds/google.credentials.json"
+    API_HOST_NAME: "https://dev.api.pokerinplace.app"
+    INTERACTIVE: "true"
+    PROTOO_LISTEN_PORT: "443"
+    MEDIASOUP_LISTEN_IP: "0.0.0.0"
+    MEDIASOUP_MIN_PORT: "2000"
+    MEDIASOUP_MAX_PORT: "2020"
+    CLOUD_RUNTIME_CONFIG: '{ "app": {"enable_timers": true, "api_hostnames": "https://dev.api.pokerinplace.app",
+    "default_hosted_media": "mediasoup", "mediasoup_hostnames": "dev.media.pokerinplace.app",
+    "service_account_filename": "/service/creds/google.credentials.json",
+    "root_url": "https://dev.pokerinplace.app/", "version": "421378a59eeb2bfe4bff145c90a35530d8feb895"
+    }, "zoom": { "key": "Gg8zyPx1l4gnRx4nToVYYiGWbtl1u8gB0m8V", "secret":
+    "h5IsASKFDDHFOBtnJGGhk3cD7FE4wpXRxowe" }, "mailjet": { "api_secret": "d6bba34925af5bee7816b233a0e06a6e",
+    "api_key": "bdc739dfff9c830eb17808112013db6f" }, "stripe": { "api_key":
+    "sk_test_KG2ZLottfxq56tRrMIseXtfA0032pHeZ32" }, "promos": { "code": "c1d7a1ee-8276-4e00-ae37-e6133c52f578"
+    } }'
+    FIREBASE_CONFIG: '{  "databaseURL": "https://poker-in-place-develop.firebaseio.com",  "storageBucket":
+    "poker-in-place-develop.appspot.com",  "projectId": "poker-in-place-develop",
+    "authDomain": "poker-in-place-develop.firebaseapp.com" }'
+
+deployment:
+  appDockerRepo: us.gcr.io/poker-in-place/poker-in-place-functions
+
+  volumes:
+  - name: google-application-credentials-volume
+    secret:
+      secretName: google-application-credentials
+      items:
+      - key: google.credentials.json
+        path: google.credentials.json
+
+  volumeMounts:
+  - name: google-application-credentials-volume
+    mountPath: /service/creds
+    readOnly: true
+
+ingress:
+  hosts:
+    - dev.api.pokerinplace.app

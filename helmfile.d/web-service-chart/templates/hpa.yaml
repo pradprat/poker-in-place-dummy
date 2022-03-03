@@ -1,0 +1,30 @@
+{{- with .Values.autoscaling }}
+  {{- if .enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "app.name" $ }}
+  labels:
+{{ include "app.labels" $ | indent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "app.name" $ }}
+  minReplicas: {{ .minReplicas }}
+  maxReplicas: {{ .maxReplicas }}
+  metrics:
+  {{- if .targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .targetCPUUtilizationPercentage }}
+  {{- end }}
+  {{- if .targetMemoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: {{ .targetMemoryUtilizationPercentage }}
+  {{- end }}
+  {{ end }}
+{{- end }}

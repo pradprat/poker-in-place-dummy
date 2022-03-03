@@ -1,0 +1,68 @@
+html {
+  font-size: min(1.2vw, 1.65vh);
+  scroll-behavior: smooth;
+}
+
+.table div,
+.table span {
+  user-select: none;
+}
+
+p {
+  user-select: text;
+}
+
+@media screen and (orientation: portrait) {
+  html {
+    font-size: min(3vw, 3vh);
+  }
+}
+
+.MuiList-root .MuiListItem-root {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.MuiList-root .MuiListItem-gutters {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.MuiList-root.MuiList-padding {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.info-snackbar {
+  background-color: #a8326b !important;
+}
+
+.MuiSpeedDialAction-staticTooltipLabel {
+  white-space: nowrap;
+}
+
+.MuiSpeedDial-actionsClosed {
+  visibility: hidden;
+}
+
+.snackbar {
+  top: 33px !important;
+}
+
+#zmmtg-root {
+  display: none;
+}

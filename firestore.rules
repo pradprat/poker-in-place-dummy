@@ -1,0 +1,194 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    match /tables/{tableId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function hasAccess(rsc) {
+        return isSignedIn()
+        //  &&
+        // (
+        //   rsc.data != null &&
+        //   rsc.data.players != null &&
+        //   rsc.data.stage != null &&
+        //   // (rsc.data.organizerId != undefined && rsc.data.organizerId != null && rsc.data.organizerId == request.auth.uid) ||
+        // (rsc.data.players != null && rsc.data.players[request.auth.uid] != null &&
+        // (
+        // rsc.data.players[request.auth.uid].role == "player" ||
+        // rsc.data.players[request.auth.uid].role == "administrator"
+        // )) ||
+        // rsc.data.stage == 'initialized' ||
+        // rsc.data.stage == 'waiting' ||
+        // rsc.data.stage == 'active');
+      }
+
+      allow create: if false;
+      // Any role can read stories.
+      allow read: if hasAccess(resource);
+    }
+    match /tournaments/{tournamentId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function hasAccess(rsc) {
+        return isSignedIn() &&
+        (
+          (rsc.data.organizerIds != null && request.auth.uid in rsc.data.organizerIds) ||
+          (rsc.data.players != null && rsc.data.players[request.auth.uid] != null &&
+            (
+            rsc.data.players[request.auth.uid].role == "player" ||
+            rsc.data.players[request.auth.uid].role == "featured" ||
+            rsc.data.players[request.auth.uid].role == "organizer" ||
+            rsc.data.players[request.auth.uid].role == "administrator" ||
+            rsc.data.players[request.auth.uid].role == "observer"
+            )
+          ) ||
+          rsc.data.status == 'initialized' ||
+          (rsc.data.organizerId != null && rsc.data.organizerId != undefined && rsc.data.organizerId == request.auth.uid) ||
+          (rsc.data.status != 'ended' && rsc.data.registrationMode == 'code')
+        ); // Add in check for closed tournaments
+      }
+
+      allow create: if false;
+      // Any role can read stories.
+      allow read: if hasAccess(resource);
+
+
+      function getTournament() {
+        return get(/databases/$(database)/documents/tournaments/$(tournamentId)).data
+      }
+      match /stats/{stat=*} {
+        function isSignedIn() {
+          return request.auth != null;
+        }
+
+        function hasAccess(rsc) {
+          return isSignedIn() && (
+          (rsc.data.organizerIds != null && request.auth.uid in rsc.data.organizerIds) || getTournament().organizerId == request.auth.uid ||
+          (rsc.data.players != null && rsc.data.players[request.auth.uid] != null && rsc.data.players[request.auth.uid].role == "organizer"));
+        }
+
+        allow create: if false;
+        // Any role can read stories.
+        allow read: if hasAccess(resource);
+      }
+
+      match /registrants/{registrant=*} {
+        function isSignedIn() {
+          return request.auth != null;
+        }
+
+        function hasAccess(rsc) {
+          return isSignedIn() && (rsc.id == request.auth.uid || getTournament().organizerId == request.auth.uid ||
+          (rsc.data.players != null && rsc.data.players[request.auth.uid] != null && rsc.data.players[request.auth.uid].role == "organizer"));
+        }
+
+        function canCreate(rsc) {
+          // Also make sure the userid matches
+          return isSignedIn();
+        }
+
+        allow create: if canCreate(resource);
+        // Any role can read stories.
+        allow read: if hasAccess(resource);
+      }
+      match /messages/{message=*} {
+        function isSignedIn() {
+          return request.auth != null;
+        }
+
+        function hasAccess(rsc) {
+          return getTournament().players[request.auth.uid].role != "";
+        }
+
+        function canCreate(rsc) {
+          // Also make sure the userid matches
+          return hasAccess(rsc);
+        }
+
+        allow create: if canCreate(resource);
+        // Any role can read stories.
+        allow read: if hasAccess(resource);
+      }
+      match /events/{events=*} {
+        function isSignedIn() {
+          return request.auth != null;
+        }
+
+        function hasAccess(rsc) {
+          return getTournament().players[request.auth.uid].role != "";
+        }
+
+        function canCreate(rsc) {
+          // Also make sure the userid matches
+          return hasAccess(rsc);
+        }
+
+        allow create: if canCreate(resource);
+        // Any role can read stories.
+        allow read: if hasAccess(resource);
+      }
+    }
+    match /tables/{table=*}/hands/{hand=*} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function hasAccess(rsc) {
+        return true;
+      }
+
+      allow create: if false;
+      // Any role can read stories.
+      allow read: if hasAccess(resource);
+    }
+    match /tables/{table=*}/hands/{hand=*}/players/{player=*} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function hasAccess(rsc) {
+        return isSignedIn() &&
+        	(rsc.data.uid == request.auth.uid ||
+            get(/databases/$(database)/documents/tables/$(table)).data.enableAutomation == true)
+      }
+
+      allow create: if false;
+      // Any role can read stories.
+      allow read, update: if hasAccess(resource);
+    }
+    match /tables/{table=*}/messages/{message=*} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function hasAccess(rsc) {
+        return true;
+      }
+
+      function canCreate(rsc) {
+        // Also make sure the userid matches
+        return true;
+      }
+
+      allow create: if canCreate(resource);
+      // Any role can read stories.
+      allow read: if hasAccess(resource);
+    }
+    match /users/{user=*} {
+      function hasAccess(rsc) {
+        return true;//rsc.id == request.auth.uid;
+      }
+
+      allow create: if hasAccess(resource);
+      allow read: if hasAccess(resource);
+      allow write: if hasAccess(resource);
+    }
+  }
+}

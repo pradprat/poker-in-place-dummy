@@ -1,0 +1,32 @@
+{
+  "app": {
+    "root_url": "http://localhost:3000/",
+    "service_account_filename": "./poker-in-place-stage-firebase-adminsdk.json",
+    "default_hosted_media": "mediasoup",
+    "mediasoup_hostnames": "n2.media.pokerinplace.app",
+    "api_hostnames": "localhost",
+    "is_emulator": true,
+    "version": "simulator"
+  },
+  "zoom": {
+    "key": "Gg8zyPx1l4gnRx4nToVYYiGWbtl1u8gB0m8V",
+    "secret": "h5IsASKFDDHFOBtnJGGhk3cD7FE4wpXRxowe"
+  },
+  "mailjet": {
+    "api_secret": "d6bba34925af5bee7816b233a0e06a6e",
+    "api_key": "bdc739dfff9c830eb17808112013db6f"
+  },
+  "stripe": {
+    "api_key": "sk_test_KG2ZLottfxq56tRrMIseXtfA0032pHeZ32"
+  },
+  "promos": {
+    "code": "c1d7a1ee-8276-4e00-ae37-e6133c52f578"
+  },
+  "domains": {
+    "localhost": {
+      "stripe": {
+        "api_key": "sk_test_51HZLcMA6IEn2uA6n8efX42HnZhZpv67181N4ZmfCyPouhaBQOZsZCu3GfoKmWImmechGORUA0RvkbCScy2wW4xM200ubqJAom1"
+      }
+    }
+  }
+}

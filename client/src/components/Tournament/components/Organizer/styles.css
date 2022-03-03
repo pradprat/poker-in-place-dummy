@@ -1,0 +1,114 @@
+.organizer .tournamentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.organizer .tournamentContainer .tournamentTable {
+  width: calc(50vw - 20px);
+  height: calc(50vh - 40px);
+  position: relative;
+  margin: 5px;
+  background-color: black;
+  overflow-y: hidden;
+}
+
+.organizer .tournamentContainer .tournamentTable.active {
+  position: absolute;
+  width: unset;
+  height: unset;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  padding: 3vw;
+  z-index: 999;
+}
+
+.organizer .tournamentContainer .tournamentTable .light-table {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  zoom: 1;
+  height: unset !important;
+}
+
+.organizer .tournamentContainer .tournamentTable.active .hover {
+  display: none !important;
+}
+
+.organizer .tournamentContainer .tournamentTable.active > div {
+  zoom: 1;
+  height: unset !important;
+}
+
+.organizer .tournamentContainer .tournamentTable .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.organizer .tournamentContainer .tournamentTable .hover {
+  display: none;
+}
+.organizer .tournamentContainer .tournamentTable:hover .hover {
+  /* content: "Observe Table"; */
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.organizer .tournamentContainer .tournamentTable > div {
+  height: 75vh !important;
+  zoom: 60%;
+}
+
+.organizer .tournamentContainer .tournamentTable .table .options {
+  position: absolute;
+}
+
+.organizer .playerlist {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 4vw;
+}
+
+.organizer .tournamentContainer {
+  padding-top: 3rem;
+}
+
+.organizer .search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4rem;
+  padding: 5px;
+}
+
+.organizer .search input {
+  font-size: 1.25rem;
+}
+
+.organizer .empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}

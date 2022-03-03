@@ -1,0 +1,51 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/client/node_modules
+/server/node_modules
+/*/node_modules
+.firebase
+
+# testing
+/coverage
+
+# production
+**/build
+functions/lib
+**/*.log*
+**/*.cachev
+**/certs/archive/*
+**/certs/csr/*
+**/certs/keys/*
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+passwords.txt
+*.env
+functions/*.runtimeconfig.json
+*.runtimeconfig.json
+.sentryclirc
+*-x64
+cypress*
+.runtimeconfig.json
+client/.runtimeconfig.json
+functions/lib/**
+
+# Intellij
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+client/junit.xml
